@@ -1,1 +1,272 @@
+<!-- *********** heading *********** -->
+<html>
+<head>
 
+<meta charset="UTF-8">
+
+
+<title>
+田崎統計 3
+</title>
+<link rel="stylesheet" href="../qmb.css" type="text/css">
+</head>
+<body>
+
+<!-- *********** top *********** -->
+
+<img src="../illustration.jpg" width="359px" height="227px" vspace="0px" hspace="20px" align="right">
+
+		<p align="left">
+		<small><a href="../e/index.html">English version</a> / <a href="https://www.gakushuin.ac.jp/~881791/OL/indexJ.html">田崎晴明のオンライン講義</a> / <a href="https://youtube.com/@haltasaki" target="_blank" rel="noopener">田崎晴明の YouTube チャンネル</a> / <a href="https://www.gakushuin.ac.jp/~881791/indexJ.html">田崎晴明のホームページ</a></small>
+</p>
+
+
+
+
+<h1>Advanced Topics in Statistical Physics by Hal Tasaki (Japanese)</h1>
+
+<!-- *********** main *********** -->
+
+<p>
+統計物理学にかかわる少し進んだ大学院レベルの話題についての、互いにほぼ独立したミニコース集です。学習院大学大学院での講義にもとづいています。
+<br>
+今は古典系についての二つのミニコースと量子系についての一つのミニコースがあります。これから増やせればうれしいです。
+英語の手書きスライドを使って日本語で講義しました(一部は、同じ内容の英語版ミニコースもあります)。スライドはすべて以下からダウンロードできます。
+
+<br>
+かっこいいイラストは、おかざき真里さんが<a href="https://www.gakushuin.ac.jp/~881791/pmqmbs/">拙著</a>のために描い下さったものです。今回、再利用を許可してくださった、おかざき真里さんに感謝します。
+<br clear="all">
+
+<div class="topic">
+<a href="#Ising">2次元イジング模型における相転移の存在証明</a>（2025年）
+<br>
+
+<a href="#2DXY">2 次元 XY 模型には強磁性秩序がないこと</a>（2025年）
+<br>
+
+<a href="#XYchain">可積分のそして非可積分の量子スピン鎖</a>（2025年）
+
+</div>
+
+<hr width="80%">
+
+<h2><a name="Ising"></a>2次元イジング模型における相転移の存在証明 / Proof of the existence of a phase transition in the two-dimensional Ising model</h2>
+<div class="inyou">
+強磁性体を理想化したモデルであるイジング模型（正しくは、Lenz-Ising 模型）は、古典統計力学の標準的な素材であり、無限自由度の系が示す相転移現象を深く理解・研究するための格好の舞台である。
+ここでは、もっとも基本的な2次元の強磁性イジング模型には相転移が存在することを厳密に証明する。
+<br>
+Part 1 で背景と動機を説明したあと、Part 2 でモデルを完全に定義し、主要な定理を述べる。
+Part 3 では、自由エネルギー密度の無限体積極限が存在し、境界条件の選択に依存しないことを証明する。
+こうして定まった自由エネルギー密度の右微分によって自発磁化を定義する。これは、熱力学にもとづく、もっとも正統な自発磁化の定義である。
+そして、Part 4 と Part 5 で、それぞれの確率幾何的な表現を導入することで、十分に高温では自発磁化がゼロであること、十分に定温では自発磁化が正である（つまり、自由エネルギー密度が微分不可能である）ことを証明する。この二つのパートがこのテーマの要である。
+<br>
+ここでは、統計力学の基本的な知識（特にカノニカル分布の定義と応用）を仮定するが、それ以外には特段の知識は仮定しない。必要な事実はすべて説明し、証明する。
+数学については、解析学の初歩的な知識と集合の標準的な記法だけを前提にする。
+</div>
+
+<h3>Lectures</h3>
+<a href="https://youtube.com/playlist?list=PLYhBJtIRxi8yUG24Tt9s4ZbXhXSdCHucH&si=GOYbygLayOv4gSQv" target="_blank" rel="noopener">Playlist in YouTube</a>
+<ul>
+<li>Part 1: Thermodynamics and phase transition in a uniaxial ferromagnet / 
+<a href="https://youtu.be/eL83x7s1ntI" target="_blank" rel="noopener">video (20 mins)</a>, <a href="../pdf/ATSP_2DIsing_1.pdf" download>slides (pdf 4.1 MB)</a>
+<li>Part 2: Definitions and main theorems / 
+<a href="https://youtu.be/uxsQdUOrTC8" target="_blank" rel="noopener">video (26 mins)</a>, <a href="../pdf/ATSP_2DIsing_2.pdf" download>slides (pdf 2.4 MB)</a>
+<li>Part 3: The existence of the infinite volume limit / 
+<a href="https://youtu.be/DGtnaZa0Uy8" target="_blank" rel="noopener">video (37 mins)</a>, <a href="../pdf/ATSP_2DIsing_3.pdf" download>slides (pdf 2.8 MB)</a>
+<li>Part 4: High-temperature region / 
+<a href="https://youtu.be/ODf2P5kV0Q4" target="_blank" rel="noopener">video (61 mins)</a>, <a href="../pdf/ATSP_2DIsing_4.pdf" download>slides (pdf 2.9 MB)</a>
+<li>Part 5: Low-temperature region / 
+<a href="https://youtu.be/uuWHLYyuMDs" target="_blank" rel="noopener">video (66.5 mins)</a>, <a href="../pdf/ATSP_2DIsing_5.pdf" download>slides (pdf 4.5 MB)</a>
+</ul>
+
+<h3>Main references</h3>
+<ul>
+<Li>
+R. Peierls, <a href="https://www.imsc.res.in/~sitabhra/teaching/asm17/Peierls_ProcCambPhilosSoc_1936_On_Isings_model_of_ferromagnetism.pdf" target="_blank" rel="noopener">On Ising's model of ferromagnetism, Mathematical Proceedings of the Cambridge Philosophical Society. 32 (3): 477 (1936).</a>
+<li>
+R.B. Griffiths, Peierls proof of spontaneous magnetization in a two-
+dimensional Ising ferromagnet. Phys. Rev. 136: A437\UTF{2013}A439
+(1964).
+<li>
+R.L. Dobrushin, Existence of a phase transition in the two-dimensional
+and three-dimensional Ising models. Dokl. Akad. Nauk SSSR, 160: 1046, (1965).
+<li> M.E. Fisher, Critical temperatures of anisotropic Ising lattices. II. General upper bounds. Phys. Rev. 162: 480\UTF{2013}485, (1967).
+</ul>
+
+<h3>Related references</h3>
+<ul>
+<li>
+S. Friedli and Y. Velenik, Statistical Mechanics of Lattice Systems: A Concrete Mathematical Introduction, Cambridge University Press, 2017. (Standard accessible textbook on rigorous statistical mechanics)
+<li>
+H. Tasaki, Physics and Mathematics of Quantum Many-Body Systems,
+Graduate Texts in Physics (Springer, 2020).
+(<a href="https://www.gakushuin.ac.jp/~881791/pmqmbs/" target="_blank" rel="noopener">web page for the book, where you can download a sample including the intoduction</a>)
+</ul>
+
+<hr width="80%">
+		
+<h2><a name="2DXY"></a>
+2 次元 XY 模型には強磁性秩序がないこと / The absence of ferromagnetic
+order in the two-dimensional XY model</h2>
+<div class="inyou">
+古典 XY 模型は、ある種の異方性をもつ磁性体のモデルであり、また、超伝導体や超流動体の有効モデルでもある。
+理論的には、連続的な対称性をもつもっとも簡単なスピン系と位置付けられる。
+連続的な対称性をもつスピン系の挙動は、とくに2次元では、Lenz-Ising 模型などの離散的な対称性をもつスピン系とは本質的に異なっている。
+2 次元の XY 模型は Kosterlitz-Thouless (KT) 転移と呼ばれる「エキゾチックな」相転移を示すことが知られている。
+<br>
+ここでは、XY 模型の低温でのふるまいを近似的に記述する Wegner のスピン波近似、そして、スピン波近似の結果が相関関数（と磁化）の厳密な上限を与えることを示す McBryan-Spencer の定理を紹介することを主要な目標にする。
+<br>
+Part 1 では少し時間をかけて、メインの内容と関連する古典スピン系（Ising 模型、XY 模型、Heisenberg 模型）の相転移についての一般的なことがらを解説する。
+Part 2 は XY 模型の定義の整理なので短い。
+Part 3 では、Wegner のスピン波近似をていねいに解説する。ここで扱うのは大胆な近似理論なのだが、順を追って計算をくわしく解説したので、かなり長くなってしまった。
+Part 4 がメインとなる McBryan-Spencer の定理の証明である。定理は強力だが証明は魔法のように簡明である。
+Part 5 では、ランダムカレント表示を用いて高温では相関関数が指数関数的に減衰することを証明する。これは一種の付録のつもりで用意したのだが、それなりに面白いと思う、
+<br>
+ここでは、統計力学の基本的な知識（特にカノニカル分布の定義と応用）を仮定するが、それ以外には特段の知識は仮定しない。必要な事実はすべて説明し、証明する。
+数学については、解析学の初歩的な知識と集合の標準的な記法だけを前提にする。
+</div>
+
+<h3>Lectures</h3>
+<a href="https://youtube.com/playlist?list=PLYhBJtIRxi8x5l1FjyEGn4HPXRZ7eE4YD&si=0gQpU5M50JChHaNW" target="_blank" rel="noopener">Playlist in YouTube</a>
+<ul>
+<li>Part 1: Background and main results / 
+<a href="https://youtu.be/EKkKZ3QVCuY" target="_blank" rel="noopener">video (48 mins)</a>, <a href="../pdf/ATSP_2DXY_1.pdf" download>slides (pdf 5.4 MB)</a>
+
+<li>Part 2: The XY model: the definition and the representation in terms of phases / 
+<a href="https://youtu.be/zLp6wCmmdi8" target="_blank" rel="noopener">video (4 mins)</a>, <a href="../pdf/ATSP_2DXY_2.pdf" download>slides (pdf 0.8 MB)</a>
+			
+<li>Part 3: Wegner’s harmonic approximation / 
+<a href="https://youtu.be/SneD-gfO4n4" target="_blank" rel="noopener">video (61 mins)</a>, <a href="../pdf/ATSP_2DXY_3.pdf" download>slides (pdf 4.5 MB)</a>
+			
+<li>Part 4: Mcbryan-Spencer’s proof of the absence of order / 
+<a href="https://youtu.be/HgCiVaOSFKU" target="_blank" rel="noopener">video (30 mins)</a>, <a href="../pdf/ATSP_2DXY_4.pdf" download>slides (pdf 5.3 MB)</a>
+			
+<li>Part 5: Exponential decay of correlations at high temperatures (appendix) / 
+<a href="https://youtu.be/ppinE86N8XQ" target="_blank" rel="noopener">video (26.5 mins)</a>, <a href="../pdf/ATSP_2DXY_5.pdf" download>slides (pdf 1.6 MB)</a>
+</ul>
+
+<h3>Main references</h3>
+<ul>
+<Li>
+F. Wegner, Spin-Ordering in a Planar Classical Heisenberg Model, Z. Phys. 206: 465-470 (1967).
+<li>
+V.L. Berezinskii, Destruction of long-range order in one-dimensional and two-dimensional systems having a continuous symmetry group i. classical
+systems. Soviet Journal of Experimental and Theoretical Physics, 32: 493-500, (1971).
+<li>
+P.C. Hohenberg, Existence of Long-Range Order in One and Two Dimensions,
+Phys. Rev. 158: 383 (1967).
+<li>
+N.D. Mermin and H. Wagner,
+Absence of Ferromagnetism or Antiferromagnetism in One or Two-Dimensional Isotropic Heisenberg Models,
+Phys. Rev. Lett. 17: 1133 (1966); Erratum Phys. Rev. Lett. 17: 1307 (1966).
+<li>
+O.A. McBryan and T. Spencer,
+<a href="https://projecteuclid.org/euclid.cmp/1103900708" target="_blank" rel="noopener">On the decay of correlations in SO(n)-symmetric ferromagnets,
+Comm. Math. Phys. 53: 299-302 (1977).</a>
+</ul>
+
+
+<h3>Related references</h3>
+<ul>
+<li>
+<a href="https://www.nobelprize.org/uploads/2018/06/advanced-physicsprize2016-1.pdf" target="_blank" rel="noopener">Topological Phase Transitions and Topological Phases of Matter (Scientifc Background on the Nobel Prize in Physics 2016)</a>
+<li>
+J. M. Kosterlitz and D. J. Thouless, Long range order and metastability in
+two dimensional solids and superfluids.(Application of dislocation theory),
+Journal of Physics C: Solid State Physics, 5(11): L124, 1972.
+<li>
+J. M. Kosterlitz and D. J. Thouless, Ordering, metastability and phase
+transitions in two-dimensional systems. Journal of Physics C: Solid State
+Physics, 6(7):1181, 1973.
+<li>
+J. Fr\UTF{00F6}hlich and T. Spencer, 
+<a href="https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-81/issue-4/The-Kosterlitz-Thouless-transition-in-two-dimensional-abelian-spin-systems/cmp/1103920388.full" target="_blank" rel="noopener">The Kosterlitz\UTF{2013}Thouless transition in two-dimensional abelian spin systems and the Coulomb gas, Comm. Math. Phys., 81 (4): 527\UTF{2013}602 (1981).</a>
+<li>
+J. Fr\UTF{00F6}hlich, B. Simon, and T. Spencer,
+<a href="https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-50/issue-1/Infrared-bounds-phase-transitions-and-continuous-symmetry-breaking/cmp/1103900151.full" target="_blank" rel="noopener">Infrared bounds, phase transitions and continuous symmetry breaking, Comm. Math. Phys. 50(1): 79-95 (1976).</a>
+<li>
+R. B. Griffiths, Spontaneous Magnetization in Idealized Ferromagnets, Phys. Rev. 152: 240--246, 1966.
+<li>
+T. Koma and H. Tasaki, <a href="https://arxiv.org/abs/cond-mat/9708126" target="_blank" rel="noopener">Classical XY Model in 1.99 Dimensions, Phys. Rev. Lett. 74: 3916-3919 (1995).</a>
+<li>
+H. Tasaki, Physics and Mathematics of Quantum Many-Body Systems,
+Graduate Texts in Physics (Springer, 2020).
+</ul>
+
+
+
+<hr width="80%">
+
+<h2><a name="XYchain"></a>
+可積分のそして非可積分の量子スピン鎖 / Integrable and non-integrable quantum spin chainsl</h2>
+<div class="inyou">
+S=1/2 量子スピン鎖と呼ばれる量子多体系の標準的なモデルに関する、興味深い二つの話題を取り上げる。
+<br>
+一つは、
+X 方向の外部磁場がゼロの場合にこのモデルが自由フェルミオン系と等価であり厳密に解けることを示した、Lieb, Schultz, Mattis による 1961 年の有名な結果である。
+<br>
+もう一つは、これとは対照的に、X 方向の磁場がゼロでない場合には、このモデルがむしろ可解でないことを示す、比較的新しい結果である。
+2019 年の白石による研究を発展させて、2024 年に山口・千葉・白石はこのモデルには非自明な局所保存量が存在しないことを証明した。これは、この系が「非可積分的」であることを強く示唆している。
+<br>
+ここでは特別な予備知識を仮定せずこれら二つの結果をていねいに解説する。前提とする知識は、量子力学の角運動量の基本的な性質と、通常の波動関数形式で記述される多体フェルミ粒子系の初歩的な性質だけである。
+とくに、消滅・生成演算子による多体量子力学の定式化（いわゆる第二量子化の方法）についての知識は仮定しない。
+</div>
+
+
+
+<h3>Lectures</h3>
+<a href="https://youtube.com/playlist?list=PLYhBJtIRxi8yS80PCbDZIgglSbykQeGsa&si=zbUV8EJDP9toh2el" target="_blank" rel="noopener">Playlist in YouTube</a>
+<ul>
+<li>Part 0: Introduction / 
+<a href="https://youtu.be/Vjqsg0iN-gk" target="_blank" rel="noopener">video (13 mins)</a>, <a href="../pdf/ATSP_XYchain_0.pdf" download>slides (pdf 1.6 MB)</a>
+
+<li>Part 1a: Free fermions on the chain / 
+<a href="https://youtu.be/cCgLP2HAV5k" target="_blank" rel="noopener">video (43 mins)</a>, <a href="../pdf/ATSP_XYchain_1a.pdf" download>slides (pdf 3.5 MB)</a>
+
+<li>Part 1b: Jordan-Wigner transformation and the exact solution of the model with h=0 / 
+<a href="https://youtu.be/oTlmiHSRnfA" target="_blank" rel="noopener">video (36 mins)</a>, <a href="../pdf/ATSP_XYchain_1b.pdf" download>slides (pdf 3.7 MB)</a>
+
+<li>Part 2: Proof of the absence of nontrivial local conserved quantities in the model with h≠0 / 
+<a href="https://youtu.be/f1opSCbUBic" target="_blank" rel="noopener">video (60.5 mins)</a>, <a href="../pdf/ATSP_XYchain_2.pdf" download>slides (pdf 5.2 MB)</a>
+</ul>
+
+<h3>Main references</h3>
+<ul>
+<li>
+E. Lieb, T. Schultz, and D. Mattis, Two soluble models of an antiferromagnetic chain, Ann. Phys. 16:
+407\UTF{2013}466 (1961).
+<li>
+N. Shiraishi, 
+<a href="https://arxiv.org/abs/1803.02637" target="_blank" rel="noopener">Proof of the absence of local conserved quantities in the XYZ chain with a magnetic field, 
+Europhys. Lett. 128: 17002 (2019).</a>
+<li>
+N. Shiraishi, 
+<a href="https://link.springer.com/article/10.1007/s10955-024-03326-4" target="_blank" rel="noopener">Absence of Local Conserved Quantity in the Heisenberg Model with Next-Nearest-Neighbor Interaction,
+J. Stat. Phys. 191: 114 (2024).</a>
+<li>
+M. Yamaguchi, Y. Chiba, and N. Shiraishi, 
+<a href="https://arxiv.org/abs/2411.02162" target="_blank" rel="noopener">Complete Classification of Integrability and Non-integrability for Spin-1/2 Chain with Symmetric Nearest-Neighbor Interaction,
+(preprint, 2024).</a>
+<li>
+M. Yamaguchi, Y. Chiba, and N. Shiraishi, 
+<a href="https://arxiv.org/abs/2411.02163" target="_blank" rel="noopener">Proof of the absence of local conserved quantities in general spin-1/2 chains with symmetric nearest-neighbor interaction,
+(preprint, 2024).</a>
+</ul>
+
+<h3>Related references</h3>
+<ul>
+<li>
+F. Franchini,
+<a href="https://arxiv.org/abs/1609.02100" target="_blank" rel="noopener">An introduction to integrable techniques for one-dimensional quantum systems</a> (Review on integrable models)
+<li>
+H. Tasaki, 
+<a href="https://arxiv.org/abs/1812.10732" target="_blank" rel="noopener">Introduction to the "second quantization" formalism for non-relativistic quantum mechanics: A possible substitution for Sections 6.7 and 6.8 of Feynman's "Statistical Mechanics"</a> (Note on the "second quantization" formalism)
+ <li>
+ H. Tasaki, 
+<a href="https://arxiv.org/abs/cond-mat/9712219" target="_blank" rel="noopener">From Nagaoka's ferromagnetism to flat-band ferromagnetism and beyond: An introduction to ferromagnetism in the Hubbard model</a> (Review on the Hubbard model)
+</ul>
+
+						
+				
+				</body>
+</html>
