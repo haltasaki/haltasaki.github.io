@@ -1,0 +1,546 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass[a4paper,12pt,papersize]{jsarticle}
+
+
+\usepackage{amsmath,amssymb,amscd,makeidx,upgreek}
+\usepackage[dvips]{graphicx}
+\usepackage{../extarrows}
+
+\input{../IsingMacro}
+
+\usepackage{xr}	
+\externaldocument{../IsingBook}
+\renewcommand{\theequation}{\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%
+%{\bf 2014/9/15:これは，ほぼ完成版．原が書いてくれたのをちょろっといじっただけですが．
+%web 資料はそれほどの完成度は要求しないようにしよう．
+%というわけで，日付を修正して，このコメントを消せば，web にアップ可能です．}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushright}
+\footnotesize 
+『相転移と臨界現象の数理』補足資料\\
+公開：2015年6月9日\\最終更新日：2015年6月9日
+\end{flushright}
+
+\noindent
+{\bf\large チェスボード評価を使った\rlb{GD1}の導出の詳細}
+\par\bigskip
+
+以下では格子，磁場$h_x$, $\xi_x$などをすべて
+固定して話を進める．また，簡単のため，$\xi$以外の引数はすべて省略する．
+
+評価の概略は本文でも示したが，以下の通り．
+\begin{itemize}
+\item[(1)]
+スピンの測度が有限区間に support をもつようなモデルによって
+まず，元のモデルを近似する
+\item[(2)]
+この「有限区間 support model」に対して，
+非積分関数$\Ftil(\varphi_x+\xi_x)/\Ftil(\varphi_x)$を多項式近似する．
+\item[(3)]
+この「有限区間 support model の非積分関数を多項式近似したもの」に対して，
+chessboard estimate を用いて，欲しい不等式の原型を得る．
+\item[(4)]
+得た不等式の右辺にて多項式近似を元に戻し，非積分関数を，
+元々欲しかった$\Ftil(\varphi_x+\xi_y)/\Ftil(\varphi_x)$にする．
+\item[(5)]
+さらにこの後，「有限区間 support」の近似を元に戻して，
+元々欲しかった不等式の右辺を得る
+\end{itemize}
+また，実際には(4), (5)をまとめて扱うので，\eqref{e:GD1}を得る
+というよりも，\eqref{e:GD1}をとばして\eqref{e:GD2}に跳ぶという仕組みになっている．
+
+以下，それぞれのステップの詳細を述べる．
+
+\medskip\noindent
+(1) 「有限区間 support model」による近似．
+
+まず（後から決める）大きな数$M>0$を固定し，$Z_L^\PBC(\xivec)$
+を二つに分ける：
+\begin{equation}
+\label{e:GD-Z-dcmp}
+	Z_L^\PBC(\xivec) 
+	= Z^{(1)}(\xivec) + Z^{(2)}(\xivec)
+\end{equation}
+ここで（local に $\displaystyle \tilde{H} = \frac{\beta}{2}\sum_{\{x,y\}\in\bBL}
+		|\varphi_x-\varphi_y|^2$ を定義した）
+\begin{align}
+\label{e:GD-Z1-def}
+	Z^{(1)}(\xivec)
+	& 
+	:= 
+	\int\Dcal\PHIC\,e^{-\tilde{H}}
+%		\exp\rbkB{
+%		-\frac{\beta}{2}\sum_{\{x,y\}\in\bBL}
+%		|\varphi_x-\varphi_y|^2
+%		}
+		\,\prod_{x\in\LaL}\Ftil(\varphi_x+\xi_x)
+%	\ret
+%	& \times 
+	\; I[\forall x \in \LaL ,  \, |\varphi_x| \leq M]
+	\\
+\label{e:GD-Z2-def}
+	Z^{(2)}(\xivec)
+	& 
+	:= 
+	\int\Dcal\PHIC\,e^{-\tilde{H}}
+%		\exp\rbkB{
+%		-\frac{\beta}{2}\sum_{\{x,y\}\in\bBL}
+%		|\varphi_x-\varphi_y|^2
+%		}
+		\,\prod_{x\in\LaL}\Ftil(\varphi_x+\xi_x)
+%	\ret
+%	& \times 
+	\; I[\exists x \in \LaL , \, |\varphi_x| > M]
+\end{align}
+である．$Z^{(1)}(\xivec)$が有限区間 support model，$Z^{(2)}(\xivec)$ は
+この近似の誤差．本文では$Z^{(1)}(\xivec)$を$\bar{Z}_L^\PBC(\beta,h;\xivec)$と書いた．
+
+以下，$M$を十分大きく取ることによって，$Z^{(2)}(\xivec)$をいくらでも小さくできる
+ことを示す．
+実際，（非常に大ざっぱな評価であるが$\tilde{H} \geq 0$を用いて）
+\begin{align}
+\label{e:GD21}
+	Z^{(2)}(\xivec) 
+	& \leq 
+	\int\Dcal\PHIC\,
+		\,\prod_{x\in\LaL}\Ftil(\varphi_x+\xi_x)
+	\, I[\exists x \in \LaL \, |\varphi_x| > M]
+	\ret 
+	& \leq \sum_{x \in \LaL} 
+	\int\Dcal\PHIC \, I[|\varphi_x| > M]\,
+		\,\prod_{y\in\LaL}\Ftil(\varphi_y+\xi_y)
+	\ret
+	& = \sum_{x \in \LaL} 
+	\int d \varphi_x \, I[|\varphi_x| > M]\,
+	\Ftil(\varphi_x+\xi_x) 
+	\,
+	\prod_{y \neq x}\int  d \varphi_y \Ftil(\varphi_y+\xi_y)
+	\ret
+	& 
+	= \sum_{x \in \LaL} 
+	\int d \varphi_x \, I[|\varphi_x- \xi_x| > M]\,
+	\Ftil(\varphi_x)
+	\prod_{y \neq x}\int  d \varphi_y \Ftil(\varphi_y)
+\end{align}
+である（最後のところでは$\varphi_y' = \varphi_y + \xi_y$ で
+積分を書き直し，$\varphi_y'$を改めて$\varphi_y$と書いた）．
+
+さて，各スピンについての積分測度は
+\begin{equation}
+	d\varphi_y \Ftil(\varphi_y)
+	= d \mu_0(\varphi_y) \, 
+	\exp \bigl \{d \beta |\varphi_y|^2 + \beta \, h_y \cdot \varphi_y \bigr \} \, 
+\end{equation}
+である．この測度に関する積分をおさえるため，測度に関する仮定
+\begin{equation}
+\label{e:GD-web-ass-on-Ia}
+	すべての\; a >0 \; に対して \quad 
+	I_a := \int d \mu_0(\varphi_x) \, e^{a |\varphi_x|^2} < \infty
+\end{equation}
+を用いる．以下では$a >0$を
+\begin{equation}
+\label{e:GD-choose-a}
+	4(a - d \beta) \geq \beta^2 
+\end{equation}
+を満たすように取って，$d\varphi_y \Ftil(\varphi_y)$を
+以下のように書き直す：
+\begin{align}
+	d\varphi_y \Ftil(\varphi_y)
+	& = d \mu_0(\varphi_y) \, \exp \bigl \{a |\varphi_y|^2  \bigr \} \,
+	\ret
+	\times 
+	& 
+	\exp \bigl \{d \beta |\varphi_y|^2 
+	+ \beta \, h_y \cdot \varphi_y - a |\varphi_y|^2 \bigr \} \,
+\end{align}
+\eqref{e:GD-choose-a}のように$a$が十分に大きいなら，
+最後の指数関数の肩は
+\begin{align}
+	& d \beta |\varphi_y|^2 + \beta \, h_y \cdot \varphi_y - a |\varphi_y|^2 
+	\leq 
+	(d \beta -a) |\varphi_y|^2 + \beta \, | h_y | \, | \varphi_y| 
+	\ret 
+	& = 
+	 - (a - d \beta ) \Bigl \{ 
+	|\varphi_y| - \frac{\beta |h_y|}{2(a - d \beta)} \Bigr \}^2 
+	+ \frac{\beta^2 |h_y|^2}{4(a-d\beta)}
+	\ret 
+	& \leq 
+	\frac{\beta^2 |h_y|^2}{4(a-d\beta)}
+	= |h_y|^2 
+\end{align}
+と押さえられるので，$y \neq x$に対しては
+\begin{align}
+	\int d\varphi_y \Ftil(\varphi_y) 
+	& 
+	\leq e^{|h_y|^2} \int d \mu_0(\varphi_y) \, \exp \bigl \{a |\varphi_y|^2  \bigr \} \,
+	= e^{|h_y|^2} \, I_a
+\end{align}
+が結論できる．
+
+また，$y = x$に対しても同様の議論により
+\begin{align}
+	& 
+	\int d\varphi_x \Ftil(\varphi_x) \, I[|\varphi_x-\xi_x| > M]
+	\ret 
+	& 
+	\leq e^{|h_x|^2} \, 
+	\int d \mu_0(\varphi_x) \, e^{a |\varphi_x|^2}\, 	I[|\varphi_x-\xi_x| > M]
+	\ret
+	& = e^{|h_x|^2} \, 
+	\int d \mu_0(\varphi_x) \, e^{2 a |\varphi_x|^2} \,
+	I[|\varphi_x-\xi_x| > M] \, e^{-a |\varphi_x|^2}
+\end{align}
+とできるが，$M$が十分大きい（例：$M > 2 |\xi_x|$）ならば
+\begin{equation}
+	I[|\varphi_x-\xi_x| > M] \, e^{-a |\varphi_x|^2}
+	\leq e^{- a ( M - |\xi_x|)^2 } 
+	\leq e^{ - a M^2/4 }
+\end{equation}
+などとできる．従って，$y = x$での積分も
+\begin{equation}
+	\int d\varphi_x \Ftil(\varphi_x) \, I[|\varphi_x-\xi_x| > M]
+	\leq I_{2a}\,\exp \bigl \{ |h_x|^2- a M^2/4 \bigr \}\, 
+%	\exp \bigl \{ - a M^2/4 \bigr \} \, I_{2a}
+\end{equation}
+と押さえられる．最終的に\eqref{e:GD21}より
+\begin{align}
+\label{e:GD-Z2-bd}
+	Z^{(2)}(\xivec) 
+	& \leq \epsilon_1 
+%	\\
+%	\epsilon_1 
+%	& 
+	:= |\Lambda_L| \, 
+	(I_a)^{|\LaL|-1} \, I_{2a} \, \exp \Bigl \{ \sum_{x} |h_x|^2- a M^2/4 \Bigr \}
+\end{align}
+という評価が得られた．$\LaL$ や$h_x$などはすべて固定されているので，
+$M$を好きなように大きくとれば，$\epsilon_1$は
+いくらでも小さくできる．
+
+\medskip\noindent
+(2) 「有限区間 support model」での多項式近似．
+
+では$Z^{(1)}(\xivec)$を考えよう．これはすべての$\varphi_x$の support が
+$[-M, M]^N$に限定されているモデルの分配函数で，以下のように書き直せる：
+\begin{align}
+\label{e:GD31}
+	Z^{(1)}(\xivec) 
+	&= \int \prod_{x} \Bigl \{ d \varphi_x\, 
+	\Ftil(\varphi_x+\xi_x) \, I[|\varphi_x| \leq M]
+	\Bigr \} \, e^{-\tilde{H}}
+	\ret 
+	& 
+	= \int \prod_{x} \Bigl \{ d \varphi_x\, 
+	\Ftil(\varphi_x) \, I[|\varphi_x| \leq M]
+	\Bigr \} \, e^{-\tilde{H}} \times 
+	\prod_{y} \frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)}
+	\ret 
+	& = 
+	\expecbb{\prod_{y} \frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)}}_M \, \times 
+	Z_M(\zerovec)
+%	\exp\rbkB{
+%		-\frac{\beta}{2}\sum_{\{x,y\}\in\bBL}
+%		|\varphi_x-\varphi_y|^2
+%		}
+\end{align}
+ここで
+\begin{align}
+\label{e:GD41}
+	Z_M (\zerovec)
+	& := \int \prod_{x} \Bigl \{ d \varphi_x\, 
+	\Ftil(\varphi_x) \, I[|\varphi_x| \leq M]
+	\Bigr \} \, e^{-\tilde{H}} 
+	\\
+\label{e:GD42}
+	\expec{\cdots}_M 
+	& := \frac{1}{Z_M(\zerovec)} 
+	\int \prod_{x} \Bigl \{ d \varphi_x\, 
+	\Ftil(\varphi_x) \, I[|\varphi_x| \leq M]
+	\Bigr \} \, e^{-\tilde{H}} (\cdots) 
+\end{align}
+を定義した．$Z_M(\zerovec)$は$Z_L^\PBC(\beta,h;\zerovec)= Z(\zerovec)$の cut-off version である．
+%しかしこの$Z_M(\zerovec)$は\eqref{e:Z1-def}
+%の$Z^{(1)}(\xivec)$の$\xi_x \equiv 0$の
+%ものであるので，今までの議論から直ちに
+%\begin{equation}
+%	\bigl | Z_M(\zerovec) - Z(\zerovec) \bigr | \leq \epsilon_1 
+%\end{equation}
+%が成り立つことがわかる（後で用いる）．
+
+さて，
+$\expec{\cdots}_M$の期待値の中身は，$|\varphi_x|\leq M$という
+有界集合上でのみ積分されている．このような有界集合上では
+Weierstrassの多項式近似定理により，期待値の中身を多項式で
+いくらでも精度よく近似することができる．つまり任意の$\delta >0$に
+対して\footnote{chessboard estimate を用いるために
+積の形は保ちたい．なので，積に対してではなく，個々の$\Ftil(\varphi+\xi_y)$に
+対する多項式近似を行う}：
+\begin{equation}
+	|\varphi_y| \leq M \quad ならば \quad 
+	\Biggl | 
+	\frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)} 
+	- 
+	P_y (\varphi_y) 
+	\Biggr | 
+	\leq \delta 
+%	+ \Delta P_y (\varphi_y)  
+%\end{equation}
+%\begin{equation}
+%	\bigl | \Delta P_y (\varphi_y) \, \bigr | 
+%	\leq  \delta
+%	\biggl | \frac{\Ftil(\varphi_y+\xi_y)}
+%	{\Ftil(\varphi_y)}
+%	- P_y (\varphi_y) \, \biggr | 
+%	\leq  \delta
+\end{equation}
+
+%\begin{equation}
+%	\frac{\Ftil(\varphi_y+\xi_y)}
+%	{\Ftil(\varphi_y)} = P_y (\varphi_y) + \Delta P_y (\varphi_y),  
+%\end{equation}
+%\begin{equation}
+%	|\varphi_y| \leq M \quad ならば \quad 
+%	\bigl | \Delta P_y (\varphi_y) \, \bigr | 
+%	\leq  \delta
+%%	\biggl | \frac{\Ftil(\varphi_y+\xi_y)}
+%%	{\Ftil(\varphi_y)}
+%%	- P_y (\varphi_y) \, \biggr | 
+%%	\leq  \delta
+%\end{equation}
+これを用いて
+期待値の中身を$\prod_y P_y(\varphi_y)$で近似することを考える．
+任意の正の実数$a_1, a_2, \ldots, a_n$と$b_1, b_2, \ldots, b_n$に
+対して
+不等式
+\begin{equation}
+\label{e:GD-ab-ineq.11}
+	\biggl | \prod_{j=1}^{n} a_j - \prod_{j=1}^{n} b_j 
+	\biggr | 
+	\leq n \times \bigl ( \max_{j} |a_j - b_j | \bigr ) 
+	\times \bigl \{\max_{j} (|a_j| \vee |b_{j}|)  
+	\bigr \}^{n-1}	
+\end{equation}
+が成り立つ\footnote{
+お馴染みの$a_1a_2a_3-b_1b_2b_3=a_1a_2a_3-b_1a_2a_3+b_1a_2a_3-b_1b_2a_3+b_1b_2a_3-b_1b_2b_3$という変形をすればいい．
+}．そこで
+\begin{equation}
+	A :=\max_{x \in \LaL} \max_{|\varphi|\leq M} 
+	 \frac{\Ftil(\varphi+\xi_x)}
+	{\Ftil(\varphi)}
+\end{equation}
+を定義すると，（$P_y(\varphi) \leq A +\delta$なので）
+\begin{equation}
+\label{e:GD-poly-appx.10}
+	\biggl | 
+	\prod_{y} \frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)}
+	- \prod_{y}P_y(\varphi_y) 
+	\biggr | 
+	\leq 
+	|\LaL| \times  \delta \times (A + \delta)^{|\LaL|-1}
+\end{equation}
+が成り立つ．つまり\eqref{e:GD31}右辺の期待値に対しては
+\begin{equation}
+\label{e:GD-poly-appx.11}
+	\expecbb{\prod_{y} \frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)}}_M
+	= \expecbb{\prod_{y} P_y(\varphi_y)}_M
+	+ \Ecal_2,  
+\end{equation}
+\begin{equation}
+	|\Ecal_2| \leq \epsilon_2 := |\LaL| \times  \delta \times (A + \delta)^{|\LaL|-1}
+\end{equation}
+が成立することがわかる．このように，問題の\eqref{e:GD31}右辺の
+期待値は，期待値の中身を
+多項式にしてもいくらでも精度よく近似できることがわかった．
+
+\medskip\noindent
+(3) 「有限区間 support model」の多項式近似におけるchessboard estimate．
+
+ここまでくれば簡単だ．\eqref{e:GD42}の期待値$\expec{\cdots}_M$は各スピンのsupport を
+制限しているだけなので，やはりRPであり，chessboard estimate が成り立つ．
+従って，期待値の中身が多項式の積である\eqref{e:GD-poly-appx.11}右辺の期待値に対しては
+\begin{equation}
+	\expecbb{\prod_{y\in \LaL} P_y(\varphi_y)}_M
+	\leq \prod_{y \in \LaL} \biggl \{ 
+	\expecbb{\prod_{x \in \LaL} P_y(\varphi_x)}_M \biggr \}^{1/|\LaL|}
+	.
+\end{equation}
+
+
+\medskip\noindent
+(4) この右辺をできるだけ狙っているものに戻して行く．
+まず，多項式近似に関しては
+\eqref{e:GD-poly-appx.10}において全ての$\xi_y$が等しい場合を考えると
+\begin{equation}
+	\biggl | 
+	\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}
+	- \prod_{x}P_y(\varphi_x) 
+	\biggr | 
+	\leq \epsilon_2
+%	|\LaL| \times  \delta \times (A + \delta)^{|\LaL|-1}
+\end{equation}
+が成り立つ．従って，
+\eqref{e:GD-poly-appx.11}と同様に
+\begin{equation}
+\label{e:GD-poly-appx.21}
+	\biggl | 
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M
+	- \expecbb{\prod_{x} P_y(\varphi_x)}_M
+	\biggr |
+	\leq \epsilon_2, 
+\end{equation}
+を得る．これから直ちに\eqref{e:GD-ab-ineq.11}を用いて
+\begin{align}
+\label{e:GD-poly-appx.25}
+	& \biggl | \, \prod_{y}
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M
+	- \prod_{y} \expecbb{\prod_{x} P_y(\varphi_x)}_M
+	\biggr |
+	\ret
+	& 
+	\leq |\LaL| \times \epsilon_2 \times (A + \delta)^{|\LaL|-1}
+	=: \epsilon_3
+\end{align}
+を得る．
+
+$a > b > 0$とする．$N$を正整数とし，関数$x^{1/N}$が上に凸であることから，
+\begin{equation}
+	a^{1/N} - b^{1/N} \leq \frac{1}{N} (a-b)\,b^{(1/N)-1}
+\end{equation}
+が成り立つことに注意すると，\eqref{e:GD-poly-appx.25}より
+\begin{align}
+\label{e:GD-poly-inverse}
+	& \prod_{y}
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M^{1/|\LaL|}
+	=  \prod_{y} \expecbb{\prod_{x} P_y(\varphi_x)}_M^{1/|\LaL|}
+	+ \Ecal_4, 
+%	\leq 
+%	\epsilon_4
+\end{align}
+\begin{align}
+	|\Ecal_4 | \leq \epsilon_4 := 
+	& 
+	\frac{1}{|\LaL|} \epsilon_3 \times 
+	\biggl \{ 
+	\prod_{y}
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M
+	- \epsilon_3 
+	\biggr \} ^{(1/|\LaL|)-1}
+\end{align}
+がわかる．
+
+
+
+\medskip\noindent
+(5) 以上の\eqref{e:GD-Z-dcmp}，\eqref{e:GD-Z2-bd}，\eqref{e:GD31}, \eqref{e:GD-poly-appx.11}, 
+\eqref{e:GD-poly-inverse}を組み合わせると
+\begin{align}
+\label{GD-matome1}
+	Z(\xivec)  
+	& = Z^{(1)}(\xivec)  + Z^{(2)}(\xivec)  
+	\leq Z^{(1)}(\xivec) + \epsilon_1 
+	\ret
+	& 
+	= Z_M(\zerovec) \, 
+	\expecbb{\prod_{y} \frac{\Ftil(\varphi_y+\xi_y)}
+	{\Ftil(\varphi_y)}}_M  
+	 + \epsilon_1 
+	\ret
+	& 
+	= Z_M(\zerovec) \, \expecbb{\prod_{y} P_y(\varphi_y)}_M \,
+	+ Z_M(\zerovec) \,  \Ecal_2  + \epsilon_1 
+	\ret
+	& \leq Z_M(\zerovec) \, \prod_{y \in \LaL} \biggl \{ 
+	\expecbb{\prod_{x \in \LaL} P_y(\varphi_x)}_M \biggr \}^{1/|\LaL|}
+	+ Z_M(\zerovec) \,  \Ecal_2  + \epsilon_1 
+	\ret 
+	& 
+	\leq 
+	Z_M(\zerovec) \,\prod_{y}
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M^{1/|\LaL|}
+	+ Z_M(\zerovec) \, (-\Ecal_4+\Ecal_2) + \epsilon_1 
+\end{align}
+を得る．
+
+さて，\eqref{GD-matome1}右辺第一項は
+\begin{align}
+	Z_M(\zerovec) \,\prod_{y}
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M^{1/|\LaL|}	
+	= \prod_{y}\Biggl \{ Z_M(\zerovec) \,
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M \, \Biggr \} ^{1/|\LaL|}
+\end{align}
+とかけるが，括弧の中身を定義に戻って書くと
+\begin{align}
+	& Z_M(\zerovec) \,
+	\expecbb{\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}}_M 
+	\ret 
+	& = \int \prod_{z} \biggl \{ 
+	d \varphi_z \tilde{F}(\varphi_z) \, I[|\varphi_z|\leq M] 
+	\biggr \} \, e^{-\tilde{H}} \, 
+	\prod_{x} \frac{\Ftil(\varphi_x+\xi_y)}
+	{\Ftil(\varphi_x)}
+	\ret 
+	& = \int \prod_{x} \biggl \{ 
+	d \varphi_x \tilde{F}(\varphi_x+\xi_y) \, I[|\varphi_x|\leq M] 
+	\biggr \} \, e^{-\tilde{H}} \, 
+\intertext{となっていて，これは$|\varphi_x|\leq M$の制限を取っ払うと大きくなる：}
+	& \leq \int \prod_{x} \biggl \{ 
+	d \varphi_x \tilde{F}(\varphi_x+\xi_y) \,
+	\biggr \} \, e^{-\tilde{H}} 
+	= Z(\zerovec)
+\end{align}
+（最後の等式は$\varphi_x' = \varphi+\xi_y$と平行移動するとわかる．）
+従って最終的に\eqref{GD-matome1}から
+\begin{equation}
+\label{e:IR-add-101}
+	Z(\xivec) \leq Z(\zerovec) + Z_M(\zerovec) \, (-\Ecal_4+\Ecal_2) + \epsilon_1
+\end{equation}
+が得られた．
+
+さて，以上を振り返ってみると，まず$M>0$を大きく取ることによって$\epsilon_1$はいくらでも
+小さくできる．また，（この$M$を固定した上で）多項式近似の精度を上げることによって，
+多項式近似に出てきた$\delta$と$\epsilon_2$をいくらでも小さくできる．
+さらにこれらを小さくすれば$\epsilon_3, \epsilon_4$もいくらでも小さくすることが
+可能である．
+
+つまり，$M>0$を大きく取り，多項式近似の精度をそれに合わせて（もちろん，格子の大きさや$\xi_x$の
+大きさなどにも負けないように）良くすることによって，\eqref{e:IR-add-101}の誤差項を
+いくらでも小さくできる．つまり，$Z(\xivec)\leq Z(\zerovec)$，すなわち
+我々の求める不等式\eqref{e:GDZ}が証明されたことになる．
+\qed 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
