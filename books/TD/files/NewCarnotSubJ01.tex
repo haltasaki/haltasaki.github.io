@@ -1,0 +1,627 @@
+
+%\documentclass[11pt,a4j]{jbook}
+\documentclass[12pt,a4j]{jsarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%comment stuff%%%%%%%%%%%%%%
+\usepackage[usenames,dvipsnames]{color}
+% \newcommand{\comment}[1]{}  %comment not shown
+\newcommand{\comment}[1]
+{{\textcolor{blue}{ #1 }}} %comment shown
+% \newcommand{\topcomment}[1]{}  %comment of second type not shown
+\newcommand{\topcomment}[1]
+{{\textcolor{blue}{ #1 }}} %comment of second type two shown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\oddsidemargin}{0.0truecm}
+%% set evensidemargin to -0.5 for double side
+%\setlength{\evensidemargin}{0.0truecm}
+%%\setlength{\evensidemargin}{-0.5truecm}
+%\setlength{\textwidth}{16.5truecm}
+%\setlength{\textheight}{21.5truecm}
+%\setlength{\topmargin}{1.0truecm}
+%\renewcommand{\baselinestretch}{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{epsfig,amsmath,eqlabel}
+\usepackage{epsfig,amsmath,amsfonts,amssymb,makeidx}
+%\renewcommand{\epsfig}[1]{\relax}
+\makeindex
+%\renewcommand{\epsfig}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% to modify figure captions 
+%%% from Okumura LaTeX2e 美文書作成入門
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\long\def\@makecaption#1#2{{\small
+\advance\leftskip1cm
+\advance\rightskip1cm
+\vskip\abovecaptionskip
+\sbox\@tempboxa{#1: #2}%
+\ifdim \wd\@tempboxa >\hsize
+ #1: #2\par
+\else
+\global \@minipagefalse
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+\fi
+\vskip\belowcaptionskip}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Use the following and print with 120% maginification.
+%\setlength{\topmargin}{-0.7cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  choose one of the two settings
+% for single sided printing
+%\setlength{\oddsidemargin}{0.15cm}\setlength{\evensidemargin}{0.15cm}
+% for double sided even-odd printing
+%\setlength{\oddsidemargin}{0.8cm}\setlength{\evensidemargin}{-0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigno}{\par\bigskip\noindent}
+\newcommand{\ret}{\notag\\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Section, eautions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter
+%\@addtoreset{equation}{chapter}
+%\makeatother
+%\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   thorems, proof
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newtheorem{theorem}{Theorem}[chapter]
+%\newtheorem{emR}[theorem]{Result}
+%\newtheorem{emA}[theorem]{Postulate}
+%\newtheorem{emT}[theorem]{Theorem}
+%\newtheorem{emL}[theorem]{Lemma}
+%\newtheorem{emD}[theorem]{Definition}
+%\newenvironment{R}[1]{\begin{emR}[#1]\em}{\end{emR}}
+%\newenvironment{RN}{\begin{emR}\em}{\end{emR}}
+%\newenvironment{A}[1]{\begin{emA}[#1]\em}{\end{emA}}
+%\newenvironment{T}[1]{\begin{emT}[#1]\em}{\end{emT}}
+%\newenvironment{LN}{\begin{emL}\em}{\end{emL}}
+%\newenvironment{D}[1]{\begin{emD}[#1]\em}{\end{emD}}
+\newcommand{\Rem}{\bigno{\bf 注意：}\ }
+\newcommand{\Rems}{\bigno{\bf 注意\st ：}\ }
+\newcommand{\Remss}{\bigno{\bf 注意\sst ：}\ }
+\newcommand{\Remsss}{\bigno{\bf 注意\ssst ：}\ }
+\newcommand{\nproof}[1]{\par\noindent\underline{#1}：}
+\newcommand{\proof}[1]{\par\bigskip\noindent\underline{#1}：}
+%\newcommand{\nproof}[1]{\par\noindent{\bf #1:\ }}
+%\newcommand{\proof}[1]{\par\bigskip\noindent{\bf #1:\ }}
+\newcommand{\qedm}{\rule{1.5mm}{3mm}}
+\newcommand{\qed}{~\qedm\par\bigskip}
+\newcommand{\qedn}{~\qedm\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   brackets and such
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\rbk}[1]{\left(#1\right)}
+\newcommand{\srbk}[1]{(#1)}
+\newcommand{\sqbk}[1]{\left[#1\right]}
+\newcommand{\cbk}[1]{\left\{#1\right\}}
+\newcommand{\bkt}[1]{\left\langle#1\right\rangle}
+\newcommand{\set}[2]{\left\{#1\,\Bigl|\,#2\right\}}
+\newcommand{\rvbar}[1]{\left.#1\right|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   special sums and such
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sumtwo}[2]%
+{\mathop{\sum_{#1}}_{#2}}
+\newcommand{\sumthree}[3]%
+{\mathop{\mathop{\sum_{#1}}_{#2}}_{#3}}
+\newcommand{\sumfour}[4]%
+{\mathop{\mathop{\mathop{\sum_{#1}}_{#2}}_{#3}}_{#4}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mintwo}[2]%
+{\mathop{\min_{#1}}_{#2}}
+\newcommand{\maxtwo}[2]%
+{\mathop{\max_{#1}}_{#2}}
+\newcommand{\limtwo}[2]%
+{\mathop{\lim_{#1}}_{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\suptwo}[2]%
+{\mathop{\sup_{#1}}_{#2}}
+\newcommand{\supthree}[3]%
+{\mathop{\mathop{\sup_{#1}}_{#2}}_{#3}}
+\newcommand{\supfour}[4]%
+{\mathop{\mathop{\mathop{\sup_{#1}}_{#2}}_{#3}}_{#4}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\inftwo}[2]%
+{\mathop{\inf_{#1}}_{#2}}
+\newcommand{\infthree}[3]%
+{\mathop{\mathop{\inf_{#1}}_{#2}}_{#3}}
+\newcommand{\inffour}[4]%
+{\mathop{\mathop{\mathop{\inf_{#1}}_{#2}}_{#3}}_{#4}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Caligraphic letters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\calA{{\cal A}}
+\newcommand\calB{{\cal B}}
+\newcommand\calC{{\cal C}}
+\newcommand\calD{{\cal D}}
+\newcommand\calE{{\cal E}}
+\newcommand\calF{{\cal F}}
+\newcommand\calG{{\cal G}}
+\newcommand\calH{{\cal H}}
+\newcommand\calI{{\cal I}}
+\newcommand\calJ{{\cal J}}
+\newcommand\calK{{\cal K}}
+\newcommand\calL{{\cal L}}
+\newcommand\calM{{\cal M}}
+\newcommand\calN{{\cal N}}
+\newcommand\calO{{\cal O}}
+\newcommand\calP{{\cal P}}
+\newcommand\calQ{{\cal Q}}
+\newcommand\calR{{\cal R}}
+\newcommand\calS{{\cal S}}
+\newcommand\calT{{\cal T}}
+\newcommand\calU{{\cal U}}
+\newcommand\calV{{\cal V}}
+\newcommand\calW{{\cal W}}
+\newcommand\calX{{\cal X}}
+\newcommand\calY{{\cal Y}}
+\newcommand\calZ{{\cal Z}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  operations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tolabel}[2]{\mathop{\longrightarrow}^{\rm #1}_{\rm(#2)}}
+\newcommand{\too}[1]{\stackrel{\rm #1}{\longrightarrow}}
+\newcommand{\both}[1]{\stackrel{\rm #1}{\longleftarrow\hspace{-4mm}\rightarrow}}
+%The following did not work in in-line equations.
+%\newcommand{\too}[1]{\mathop{\longrightarrow}^{\rm #1}}
+%\newcommand{\both}[1]{\mathop{\longleftarrow\hspace{-4mm}\rightarrow}^{\rm #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tooa}{\too{a}}
+\newcommand{\bothaq}{\both{aq}}
+\newcommand{\tooaq}{\too{aq}}
+\newcommand{\tooi}{\too{i}}
+\newcommand{\tooiq}{\too{iq}}
+\newcommand{\tooig}{\too{i'}}
+\newcommand{\bothiq}{\both{iq}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\toa}{\xrightarrow{\rm a}}
+%\newcommand{\toaq}{\xleftarrow{\rm aq}\hspace{-4mm}\rightarrow}
+%\newcommand{\traq}{\xrightarrow{\rm aq}}
+%\newcommand{\tooi}{\xrightarrow{\rm i}}
+%\newcommand{\tooiq}{\xrightarrow{\rm iq}}
+%\newcommand{\tooig}{\xrightarrow{\rm i'}}
+%\newcommand{\bothiq}{\xleftarrow{\rm iq}\hspace{-4mm}\rightarrow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\toi}[1]{\xrightarrow{{\rm i}:#1}}
+%\newcommand{\toig}[1]{\xrightarrow{{\rm i'}:#1}}
+%\newcommand{\triq}[1]{\xrightarrow{{\rm iq}:#1}}
+%\newcommand{\toiq}[1]{\xleftarrow{{\rm iq}:#1}\hspace{-4mm}\rightarrow}
+%older
+%\newcommand{\toa}{\stackrel{{\rm a}}{\longrightarrow}}
+%\newcommand{\toaq}{\stackrel{{\rm aq}}{\longrightarrow}}
+%\newcommand{\toi}{\stackrel{{\rm i}}{\longrightarrow}}
+%\newcommand{\toiq}{\stackrel{{\rm iq}}{\longrightarrow}}
+%\newcommand{\TO}[1]{\toi}
+%\newcommand{\TO}[1]{\stackrel{#1}{\longrightarrow}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Frequently used symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ep}{\varepsilon}
+\newcommand{\up}{\nearrow}
+\newcommand{\dn}{\searrow}
+\newcommand{\bs}{\backslash}
+\newcommand{\partialD}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\fpartial}[2]{\frac{\partial #1}{\partial #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   sloppy ineualities
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\lesssim}
+%{\mathrel{\raisebox{-2.8pt}{\mbox{$\stackrel{\textstyle <}{\sim}$}}}}
+%\newcommand{\gtrsim}
+%{\mathrel{\raisebox{-2.8pt}{\mbox{$\stackrel{\textstyle >}{\sim}$}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   stars
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\st}{$^\star$}
+\newcommand{\sst}{$^{\star\star}$}
+\newcommand{\ssst}{$^{\star\star\star}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  misc
+\newcommand{\HF}{Helmholtz free energy}
+\newcommand{\GF}{Gibbs free energy}
+\newcommand{\Leg}{Legendre transform}
+\newcommand{\Wcyc}{W_{\rm cyc}}
+\newcommand{\Wmax}{W_{\rm max}}
+\newcommand{\Wad}{W_{\rm ad}}
+\newcommand{\Wmix}{W_{\rm mix}}
+\newcommand{\Qmax}{Q_{\rm max}}
+\newcommand{\bN}{{\bf N}}
+\newcommand{\tbN}{\widetilde{{\bf N}}}
+\newcommand{\la}{\lambda}
+\newcommand{\VN}{(V,N)}
+\newcommand{\vn}{(V,N)}
+\newcommand{\tVN}{(T;V,N)}
+\newcommand{\tvn}{(T;V,N)}
+\newcommand{\tX}{(T;X)}
+\newcommand{\tXp}{(T';X')}
+\newcommand{\tXs}{(T^*;X^*)}
+\newcommand{\tpbn}{T,p;\bN}
+\newcommand{\br}{{\bf r}}
+\newcommand{\ts}{T^*}
+\newcommand{\Tb}{T_{\rm b}}
+\newcommand{\Tc}{T_{\rm c}}
+\newcommand{\ps}{p^*}
+\newcommand{\vs}{v^*}
+\newcommand{\Ts}{T^*}
+\newcommand{\Xs}{X^*}
+\newcommand{\Ss}{S^*}
+\newcommand{\Vs}{V^*}
+\newcommand{\sts}{s^*}
+\newcommand{\tiF}{\widetilde{F}}
+\newcommand{\tiG}{\widetilde{G}}
+\newcommand{\tiK}{\widetilde{K}}
+\newcommand{\tiX}{\widetilde{X}}
+\newcommand{\tiS}{\widetilde{S}}
+\newcommand{\tiT}{\widetilde{T}}
+\newcommand{\tiV}{\widetilde{V}}
+\newcommand{\tiN}{\widetilde{N}}
+\newcommand{\tiZ}{\widetilde{Z}}
+\newcommand{\tia}{\tilde{a}}
+\newcommand{\tig}{\tilde{g}}
+\newcommand{\tim}{\tilde{m}}
+\newcommand{\tip}{\tilde{p}}
+\newcommand{\tiu}{\tilde{u}}
+\newcommand{\tiq}{\tilde{q}}
+\newcommand{\tix}{\tilde{x}}
+\newcommand{\tiy}{\tilde{y}}
+\newcommand{\tiz}{\tilde{z}}
+\newcommand{\tixi}{\tilde{\xi}}
+\newcommand{\timu}{\tilde{\mu}}
+\newcommand{\tibN}{\widetilde{\bf N}}
+\newcommand{\pv}{p_{\rm v}}
+\newcommand{\pc}{p_{\rm c}}
+\newcommand{\Cv}{C_{\rm v}}
+\newcommand{\Cp}{C_{\rm p}}
+\newcommand{\sumim}{\sum_{i=1}^m}
+\newcommand{\xmin}{x_{\rm min}}
+\newcommand{\xmax}{x_{\rm max}}
+\newcommand{\amin}{\alpha_{\rm min}}
+\newcommand{\amax}{\alpha_{\rm max}}
+\newcommand{\VL}{V_{\rm L}}
+\newcommand{\VG}{V_{\rm G}}
+\newcommand{\vso}{v_{\rm S}}
+\newcommand{\vl}{v_{\rm L}}
+\newcommand{\vg}{v_{\rm G}}
+\newcommand{\uso}{u_{\rm S}}
+\newcommand{\ul}{u_{\rm L}}
+\newcommand{\ug}{u_{\rm G}}
+\newcommand{\Vl}{V_{\rm L}}
+\newcommand{\Vg}{V_{\rm G}}
+\newcommand{\mus}{\mu^*}
+\newcommand{\rA}{{\rm A}}
+\newcommand{\bnu}{\boldsymbol{\nu}}
+\newcommand{\bkappa}{\boldsymbol{\kappa}}
+\newcommand{\HHO}{{\rm H_2O}}
+\newcommand{\hyd}{{\rm H_3O^+}}
+\newcommand{\OH}{{\rm OH^-}}
+\newcommand{\HA}{{\rm HA}}
+\newcommand{\Am}{{\rm A^-}}
+\newcommand{\Me}{{\rm M}}
+\newcommand{\Mp}{{\rm M^+}}
+\newcommand{\MA}{{\rm MA}}
+\newcommand{\muM}{\mu_{\rm M}}
+\newcommand{\mumL}{\mu_{\Am}^{\rm L}}
+\newcommand{\mumR}{\mu_{\Am}^{\rm R}}
+\newcommand{\mupL}{\mu_{\Mp}^{\rm L}}
+\newcommand{\mupR}{\mu_{\Mp}^{\rm R}}
+\newcommand{\rla}{\rightleftarrows}
+\newcommand{\KW}{K_{\rm W}}
+\newcommand{\Ka}{K_{\rm a}}
+\newcommand{\tiKW}{\tiK_{\rm W}}
+\newcommand{\tiKa}{\tiK_{\rm a}}
+\newcommand{\NML}{N_{\rm M}^{\rm L}}
+\newcommand{\NMR}{N_{\rm M}^{\rm R}}
+\newcommand{\NPL}{N_{+}^{\rm L}}
+\newcommand{\NPR}{N_{+}^{\rm R}}
+\newcommand{\bNL}{\bN^{\rm L}}
+\newcommand{\bNR}{\bN^{\rm R}}
+\newcommand{\ms}{m_{\rm s}}
+\newcommand{\vr}{{\bf r}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\Not}{N_1^{\rm tot}}
+\newcommand{\THi}{T_{\rm H}}
+\newcommand{\TL}{T_{\rm L}}
+\newcommand{\QH}{Q_{\rm H}}
+\newcommand{\QL}{Q_{\rm L}}
+\newcommand{\tiQH}{\tilde{Q}_{\rm H}}
+\newcommand{\tiQL}{\tilde{Q}_{\rm L}}
+\newcommand{\myself}{著者}
+\newcommand{\fnskip}{\footnote{This section can be skipped without creating a logical gap.}}
+\newcommand{\adnote}{{\bf Advanced note}}
+\newcommand{\abar}{\bar{a}}
+\newcommand{\bbar}{\bar{b}}
+\newcommand{\cbar}{\bar{c}}
+\newcommand{\dbar}{\bar{d}}
+\newcommand{\aba}{($\rm\bar{a}$)}
+\newcommand{\bba}{($\rm\bar{b}$)}
+\newcommand{\cba}{($\rm\bar{c}$)}
+\newcommand{\dba}{($\rm\bar{d}$)}
+\newcommand{\Tf}{T_{\rm f}}
+\newcommand{\pL}{p_{\rm L}}
+\newcommand{\pR}{p_{\rm R}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Rumford}{温度を上げる操作の存在}
+\newcommand{\Joule}{エネルギー保存則}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% for problem numbering
+%\newcounter{mondaiCounter}[chapter]
+%\renewcommand{\themondaiCounter}{\thechapter.\arabic{mondaiCounter}}
+%\newcommand{\mondai}{
+%\refstepcounter{mondaiCounter}
+%\par\vskip5mm\noindent{\large\bf\themondaiCounter}~
+%}
+%\newcommand{\prob}{\section*{Exercises~\thechapter.}
+%\markright{Exercises~\thechapter.}}
+%\newcommand{\ans}[1]{{\bf \ref{#1}.}~}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Temporal macros for my own use
+\newcommand{\tn}{\par\noindent}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\halC}[1]{{\em Hal: #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xr}	
+\externaldocument{ver0.1comments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+\begin{flushright}
+\footnotesize 公開：2015年8月26日、最終更新：2015年8月26日
+\end{flushright}
+{\large\bf 『熱力学：現代的な視点』5-4節の改良版}
+\begin{flushright}
+\small 田崎晴明
+\end{flushright}
+
+
+%\bigskip
+田中琢真さん\footnote{%
+東京工業大学総合理工学研究科知能システム科学専攻}のご指摘で、『熱力学：現代的な視点』の 5-4 節でのCarnotの定理（結果 5.2, 75 ページ）の証明が圧倒的に改良されることがわかった。難解な付録Aもまったく不要になった。
+
+今後、『熱力学：現代的な視点』の第 17 刷（2015 年 9 月）以前の版を読まれる方は、本文 81 ページ冒頭から 5-4 節の最後までを、次ページ以降の内容に差し替えて読んでいただければ幸いである。また、付録Aはまったく不要になったので読む必要はない。
+
+\bigskip
+
+なお、改良された内容、また改良の背景などにご興味がある方は、既に本を読んだ人を対象に書いた姉妹版の文書
+\begin{quote}
+『熱力学：現代的な視点』におけるCarnotの定理の証明の改良について
+\end{quote}
+を参照されたい。
+
+
+\setcounter{page}{0}
+\newpage
+\noindent
+\underline{81ページ冒頭から5-4節の最後までを以下で差し替え：}
+ \setcounter{footnote}{12}
+
+\bigskip
+
+ここで正の定数 $\alpha$ を
+\begin{equation}
+\alpha=\frac{\Qmax(T;X_0\to X_1)}{\Qmax(T;Y_0\to Y_1)}
+\tag{5.25}
+\label{alpha}
+\end{equation}
+と定める。
+$Y$-系をそのまま $\alpha$ 倍にした系を考える。
+最大吸熱量の示量性(\ref{Qex})から、この系は \cba{} に対応する $(T;\alpha Y_0)\tooiq(T;\alpha Y_1)$ という操作の間に $\Qmax(T;\alpha Y_0\to\alpha Y_1)=\alpha\Qmax(T;Y_0\to Y_1)$ だけの熱を吸収する。
+ところが (\ref{alpha}) より、この吸熱量は $X$-系の (c) での発熱量
+ $\Qmax(T;X_0\to X_1)$ に等しい。
+
+%%%%%%the following is new
+そこで、$X$-系での (c) の操作 $(T;X_1)\tooiq(T;X_0)$ と $\alpha$ 倍した $Y$-系での \cba{} の操作 $(T;\alpha Y_0)\tooiq(T;\alpha Y_1)$ を同時に行なうことを考える。
+そうすると、示量変数の組$(X,\alpha Y)$の複合系についての等温準静操作
+\begin{equation}
+(T;X_1,\alpha Y_0)\tooiq(T;X_0,\alpha Y_1)
+\tag{5.25b}
+\label{TXYiqNew}
+\end{equation}
+が得られる。
+最大吸熱量の相加性(\ref{Qadd})と上の段落での評価を使えば、
+\begin{align}
+\Qmax(T;(X_1,\alpha Y_0)\to(X_0,\alpha Y_1))&=
+\Qmax(T;X_1\to X_0)+\Qmax(T;\alpha Y_0\to\alpha Y_1)
+\ret&=0
+\tag{5.25c}
+\label{QmaxTXYNew}
+\end{align}
+がいえる。{\bf 等温準静操作(\ref{TXYiqNew})を全体としてみれば、系は環境とまったく熱をやりとりしない}のだ。
+それなら、(\ref{TXYiqNew})は、等温準静操作であるとともに、{\bf （実質的には）断熱準静操作でもあるとみなしていいだろう} --- というのがCarnotの着想だった。
+
+これは熱力学の本質に迫るきわめて重要なアイディアだが、残念ながら、かなり大雑把な議論でもある。
+そもそも最大吸熱量がゼロというのは、操作全体で総計したとき系と環境の間の熱のやりとりがゼロということを意味するに過ぎない。操作の途中では系と環境は熱をやりとりしており、総計としてたまたま吸熱量と発熱量がバランスしているというのが普通だろう\footnote{%
+\underline{進んだ注：}仮に操作の途中の任意の時刻で吸熱率と発熱率がバランスするような特殊な状況（本の付録Aでは、そのような状況を構築している）を考えるとしても、（等温環境で行なう）等温操作と（断熱環境で行なう）断熱操作を同一視してよいかは本質的に難しい問題である。
+}。
+
+幸いにも、このCarnotの着想を自然に厳密にできることがわかっている（よって、厳密さに深入りしたくない読者はこの着想をそのまま認めて先に進んでいいと思う）。
+等温準静操作(\ref{TXYiqNew})そのものを断熱操作とみなすのは無理があるが、実は、始状態も終状態も完全に(\ref{TXYiqNew})と一致する
+\begin{equation}
+(T;X_1,\alpha Y_0)\tooaq(T;X_0,\alpha Y_1) \; 
+\tag{5.26}
+\label{CA1}
+\end{equation}
+という断熱準静操作が存在することが示されるのだ\footnote{%
+田中琢真氏の私信（2014年12月）による。
+}。
+この事実の証明は後の補遺で述べることにして、Carnotの定理の証明を進めよう。
+ 
+ここから先の構成はずっと単純である。
+%%%%%%the above is new
+(a) の $(T';X_0')\tooiq(T';X_1')$ と \aba{} の $(T';Y_1')\tooiq(T';Y_0')$ を単に組み合わせた等温準静操作
+\begin{equation}
+(T';X_0',\alpha Y_1')\tooiq(T';X_1',\alpha Y_0')
+\tag{5.27}
+\label{CI}
+\end{equation}
+(b) の $(T';X_1')\tooaq(T;X_1)$ と \dba{} の $(T';Y_0')\tooaq(T;Y_0)$ を単に組み合わせた
+断熱準静操作
+\begin{equation}
+(T';X_1',\alpha Y_0')\tooaq(T;X_1,\alpha Y_0)
+\tag{5.28}
+\label{CA2}
+\end{equation}
+そして、(d) の $(T;X_0)\tooaq(T';X_0')$ と \bba{} の $(T;Y_1)\tooaq(T';Y_1')$ を単に組み合わせた断熱準静操作
+\begin{equation}
+(T;X_0,\alpha Y_1)\tooaq(T';X_0',\alpha Y_1')
+\tag{5.29}
+\label{CA3}
+\end{equation}
+を用意する。
+四つの操作 (\ref{CI}), (\ref{CA2}), (\ref{CA1}), (\ref{CA3}) を続けて行なうことで、サイクル
+\begin{equation}
+(T';X_0',\alpha Y_1')\tolabel{iq}{a,\abar}
+(T';X_1',\alpha Y_0')\tolabel{aq}{b,\dbar}
+(T;X_1,\alpha Y_0)\tolabel{aq}{c,\cbar}
+(T;X_0,\alpha Y_1)\tolabel{aq}{d,\bbar}
+(T';X_0',\alpha Y_1')
+\tag{5.30}
+\label{Car2}
+\end{equation}
+が得られる。
+%%%%%%the following is new
+Carnot サイクル (\ref{Car}) と逆 Carnot サイクル (\ref{CarE}) を連動させ、(c,$\bar{\rm c}$)の部分を断熱準静操作に置き換えたといってもいい。
+%%%%%%the above is new
+このサイクルは、温度 $T'$ での等温操作 (a,$\rm\bar{a}$) 以外の各操作が断熱操作であり、また全ての操作が準静的なので、温度 $T'$ での等温準静サイクルになっている。
+よって、Kelvin の原理~\ref{a:KP} から導かれた結果~\ref{r:Wc=0} により、サイクル (\ref{Car2}) の間に系が外界に行なう仕事 $\Wcyc$ は 0 であることがわかる。
+
+%%%%%%the following is new
+同じ仕事$\Wcyc$をサイクル(5.30)の定義から直接求めよう。
+この際、等温準静操作(\ref{TXYiqNew})と断熱準静操作(\ref{CA1})において系が外界にする仕事は等しいことに注意する。
+これは最大吸熱量がゼロであること(\ref{QmaxTXYNew})と、エネルギー保存則(\ref{W=U-U}), (\ref{Qmax})の帰結である。
+よって、サイクル(\ref{Car2})における仕事はもとのCarnotサイクル(\ref{Car})と逆Carnotサイクル(\ref{CarE})における仕事の和になる。
+単一のCarnotサイクルの行なう仕事は、(\ref{WCar})のように求められるので、結局、
+%%%%%%the above is new
+\begin{align}
+\Wcyc
+=&
+\Qmax(T';X_0'\to X_1')-\Qmax(T;X_0\to X_1)
+\ret
+&
+-\alpha\Qmax(T';Y_0'\to Y_1')+\alpha\Qmax(T;Y_0\to Y_1)
+\ret
+=&
+\Qmax(T';X_0'\to X_1')
+-\frac{\Qmax(T;X_0\to X_1)}{\Qmax(T;Y_0\to Y_1)}
+\Qmax(T';Y_0'\to Y_1')
+\tag{5.31}
+\label{Wtcyc}
+\end{align}
+と評価できる。
+ $\alpha$ の定義 (\ref{alpha}) を用いた。
+これを $\Wcyc=0$ に代入すれば、
+\begin{equation}
+\frac{\Qmax(T';X_0'\to X_1')}{\Qmax(T;X_0\to X_1)}
+=
+\frac{\Qmax(T';Y_0'\to Y_1')}{\Qmax(T;Y_0\to Y_1)}
+\tag{5.32}
+\label{QQES}
+\end{equation}
+という等式が得られる。
+これは、まさに最大吸熱量の比が熱力学的な系と参照点の選び方に依存しないことを示している。
+Carnot の定理が示された。
+
+
+\bigskip
+\paragraph*{補遺}
+ここでは、等温準静操作(\ref{TXYiqNew})に対応する断熱準静操作(\ref{CA1})が存在することを示す。
+そのために、以下の一般的な結果（この結果は、それ自身でも十分に興味深い）を示せばよい。
+
+\bigskip\noindent
+{\bf 結果}　任意の熱力学系において等温準静操作
+\begin{equation}
+(T;X)\tooiq(T;X')
+\label{TXiqTXnew}
+\end{equation}
+が可能であり、また対応する最大吸熱量が
+\begin{equation}
+\Qmax(T;X\to X')=0
+\label{Qmax=0new}
+\end{equation}
+を満たすとする。
+このとき、断熱準静操作
+\begin{equation}
+(T;X)\tooaq(T;X')
+\label{TXaqTXnew}
+\end{equation}
+が必ず存在する。
+
+\bigskip
+等温操作(\ref{TXiqTXnew})に対応する断熱操作が存在することがまったく自明でないのは本文の議論でもわかるだろう。実際、この結果の証明にはKelvinの原理が必要である。
+
+\proof{導出}
+結果~\ref{r:comp}（58ページ）より、$(T;X)\tooa(T;X')$または$(T;X')\tooa(T;X)$ という断熱操作の少なくとも一方が実現できる。
+仮に前者が実現可能だとして話を進めよう（もし後者が実現可能なら$X$と$X'$を入れ替えればよいので、これで一般性は失われない）。
+系を断熱環境におき、示量変数を$X$から$X'$までゆっくりと変化させることで、断熱準静操作
+\begin{equation}
+(T;X)\tooaq(T';X')
+\label{TXaqT'Xnew}
+\end{equation}
+が実現される。ここで終温度$T'$は未知である。
+以下で、実は$T'=T$しかあり得ないことを示す。よって、実現された(\ref{TXaqT'Xnew})が、存在を示したかった断熱準静操作(\ref{TXaqTXnew})に他ならない。
+
+まず$T'>T$と仮定する。
+断熱準静操作(\ref{TXaqT'Xnew})の逆操作と存在を仮定した断熱操作$(T;X)\tooa(T;X')$を組み合わせれば、
+\begin{equation}
+(T';X')\tooaq(T;X)\tooa(T;X')
+\label{T'X'aqTXaTX'new}
+\end{equation}
+という断熱操作が得られる。全体としてみれば、示量変数$X'$を変化させずに温度を下げる断熱操作になっている。
+実は、そのような断熱操作は決して実現できないことが簡単に証明できる。
+この事実は、本では、Planckの原理（結果6.4, 100ページ）としてまとられている（先の方にあるが、証明に使うのはKelvinの原理だけ）。
+こうして矛盾が導かれたので、$T'\le T$と結論される。
+
+次に$T'<T$と仮定する。
+もとの等温準静操作(\ref{TXiqTXnew})の逆操作と断熱準静操作(\ref{TXaqT'Xnew})を組み合わせることで、サイクル
+\begin{equation}
+(T;X')\tooiq(T;X)\tooaq(T';X')\tooig(T;X')
+\label{cycleTanaka}
+\end{equation}
+を作ることができる。
+最後の操作では、単に断熱壁を取り除き系を環境と接触させた（このような操作を広義の等温操作という。問題5.2を見よ）。
+サイクル(\ref{cycleTanaka})では、系はつねに温度$T$の環境の中にあるので、これは等温サイクルである。
+等温準静操作、断熱準静操作それぞれにおけるエネルギー保存則(\ref{Qmax}), (\ref{W=U-U})を用いれば、このサイクルの間に系が外界にする仕事が
+\begin{align}
+\Wcyc&=U(T;X')-U(T;X)+\Qmax(T;X'\to X)+U(T;X)-U(T';X')
+\ret
+&=U(T;X')-U(T';X')
+\label{WcycTanaka}
+\end{align}
+であることがわかる。
+広義の等温操作で系が仕事をしないこと、(\ref{Qmax=0new})のように最大吸熱量がゼロであることを用いた。
+エネルギーが温度の増加関数であることを示す結果~\ref{r:Uinc}（63ページ）より、$T'<T$ならば(\ref{WcycTanaka})の最右辺は正である。
+これは$\Wcyc>0$を意味するからKelvinの原理（要請~\ref{a:KP}, 38ページ）と矛盾。
+よって$T'\ge T$と結論される。\qed
+
+
+\bigskip\bigskip\bigskip
+\noindent
+\underline{付録Aは不要}
+
+
+\end{document}

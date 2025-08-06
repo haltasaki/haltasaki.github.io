@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{jarticle}
+\usepackage{epsfig,amsmath,amsfonts,amssymb,makeidx,ifthen,upgreek}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\oddsidemargin}{0.0truecm}
+\setlength{\textwidth}{16.5truecm}
+\setlength{\textheight}{20truecm}
+\setlength{\topmargin}{0.0truecm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tolabel}[2]{\mathop{\longrightarrow}^{\rm #1}_{\rm(#2)}}
+\newcommand{\too}[1]{\stackrel{\rm #1}{\longrightarrow}}
+\newcommand{\both}[1]{\stackrel{\rm #1}{\longleftarrow\hspace{-4mm}\rightarrow}}
+%The following did not work in in-line equations.
+%\newcommand{\too}[1]{\mathop{\longrightarrow}^{\rm #1}}
+%\newcommand{\both}[1]{\mathop{\longleftarrow\hspace{-4mm}\rightarrow}^{\rm #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tooa}{\too{a}}
+\newcommand{\bothaq}{\both{aq}}
+\newcommand{\tooaq}{\too{aq}}
+\newcommand{\tooi}{\too{i}}
+\newcommand{\tooiq}{\too{iq}}
+\newcommand{\tooig}{\too{i'}}
+\newcommand{\bothiq}{\both{iq}}
+\newcommand{\pv}{p_{\rm v}}
+\newcommand{\pc}{p_{\rm c}}
+\newcommand{\Cv}{C_{\rm v}}
+\newcommand{\Cp}{C_{\rm p}}
+\newcommand{\sumim}{\sum_{i=1}^m}
+\newcommand{\xmin}{x_{\rm min}}
+\newcommand{\xmax}{x_{\rm max}}
+\newcommand{\amin}{\alpha_{\rm min}}
+\newcommand{\amax}{\alpha_{\rm max}}
+\newcommand{\VL}{V_{\rm L}}
+\newcommand{\VG}{V_{\rm G}}
+\newcommand{\vso}{v_{\rm S}}
+\newcommand{\vl}{v_{\rm L}}
+\newcommand{\vg}{v_{\rm G}}
+\newcommand{\THi}{T_{\rm H}}
+\newcommand{\TL}{T_{\rm L}}
+\newcommand{\dn}{\searrow}
+\newcommand{\DT}{\Delta T}
+\newcommand{\Dp}{\Delta p}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushright}
+\footnotesize
+「熱力学 --- 現代的な視点から」への訂正（2010年3月1日）
+\end{flushright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+p.151, 問題の修正 
+\bigskip
+
+\noindent
+{\bf 7.9}（7-7節）物質量$N$の純物質を用意し、
+\begin{equation}
+(T';V'_0,N)\tooiq(T';V'_1,N)\tooaq(T;V_1,N)\tooiq(T;V_0,N)\tooaq(T';V'_0,N)
+\tag{7.70}
+\end{equation}
+というCarnotサイクルを考える。
+サイクルのあいだ系はつねに気体と液体が相共存した状態にある。
+考えやすいよう$V'_0<V'_1<V_1>V_0>V_0'$および$T'>T$としよう。
+このサイクルにCarnotの定理を適用することでClapeyronの関係を示せ。
+$\DT=T'-T$が微小としてエンタルピーの変化に着目するとよい。
+
+
+\bigskip\bigskip
+\noindent
+p.151, 解答の修正 
+\bigskip
+
+\noindent
+{\bf 7.9} サイクル(7.70)に現れる状態に順に$A$, $B$, $C$, $D$と名前をつける。
+気液が共存しているので、圧力は、$C$と$D$の間でつねに$\pv(T)$、$A$と$B$の間でつねに$\pv(T+\DT)=\pv(T)+\Dp$である。
+一般に、微小な断熱準静操作 $(T;V,N)\tooaq(T+\Delta T;V+\Delta V,N)$ での
+エンタルピー $H=U+pV$ の変化は（エネルギー保存則 $\Delta U+p\Delta V=0$より）
+$\Delta H=\Delta U+p\Delta V+V\Delta p=V\Delta p$ である。
+よって$H(B)-H(C)=V_1\Dp$, $H(A)-H(D)=V_0\Dp$がわかる。
+等温準静操作での発熱量はエンタルピーの差で書けるので、$D$から$C$に移る際に気化する物質の量を$N'$とすると、$Q(D\to C)=H(C)-H(D)=H_{\rm vap}(T;N')$である。
+一方、上の考察から$Q(A \to B)=H(B)-H(A)=Q(D\to C)+(V_1-V_0)\Dp$である。
+$Q(A\to B)/Q(D\to C)=1+(\DT/T)$に得られた表式を代入し、$(V_1-V_0)/N'=\vg(T)-\vl(T)$に注意すればClapeyronの関係が得られる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
