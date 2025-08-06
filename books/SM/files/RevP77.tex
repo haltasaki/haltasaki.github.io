@@ -1,0 +1,140 @@
+
+%%%%%%%%%
+\documentclass[12pt,a4paper]{jsarticle}
+%\setlength{\oddsidemargin}{0.0truecm}
+%\setlength{\evensidemargin}{0.0truecm}
+%\setlength{\textwidth}{13.5truecm}
+%\setlength{\textheight}{21.5truecm}
+%\setlength{\topmargin}{1.0truecm}
+%\西暦
+%\renewcommand{\baselinestretch}{1.2}
+\usepackage{epsfig,amsmath,amsfonts,amssymb,makeidx,ifthen,upgreek}
+%\makeindex
+%
+\usepackage{xr}
+\externaldocument{SBlatest}
+%\renewcommand{\epsfig}[1]{\relax}
+%\input{SBmacro}
+%\includeonly{futurechapters}
+
+
+\newcommand{\sumtwo}[2]%
+{\mathop{\sum_{#1}}_{#2}}
+
+%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\noindent
+{\bf 状態数に関連する初版第17刷以前への修正}
+
+\medskip\noindent
+初版第17刷以前では第3章終盤の状態数についての直観的な議論が不必要にわかりにくかった。
+誤りではないが以下のように修正する。
+
+
+\bigskip
+
+\noindent
+p.~77の「極限の存在について」全体を以下に差し替える。
+
+
+
+\subsubsection*{極限(3.2.29)の存在について}
+%定理~\ref{t:Omega}が成り立つ仕組みについて、ごく大ざっぱな「物理的な」説明をしておこう。
+%基底エネルギー密度の存在は物理的には自然なので、状態数のふるまいについてだけ議論する。
+%きちんとした証明については付録~\ref{s:DSproof}で解説する。
+定理~\ref{t:Omega}の証明（付録~\ref{s:DSproof}）はやや難しいので、ここで、厳密さにこだわらず、定理が成り立つ理由を直観的に説明しておこう。
+基底エネルギー密度の存在は自然なので、状態数のふるまいについてだけ議論する。
+
+
+十分に大きな体積$V_0$を固定する。
+体積$V_0$の立方体を$m$個あわせて体積$V=m\,V_0$のさらに大きな立方体を作る。
+体積$V$の立方体の中に$N$個の粒子が閉じこめられて相互作用している系の状態数$\Omega_{V,N}(E)$を評価したい。
+以下、体積$V$の系を全系、体積$V_0$の$m$個の系を部分系と呼ぶ。
+
+$m$個の部分系の粒子数を$N_1,\ldots,N_m$、エネルギーを$E_1,\ldots,E_m$とする。
+全系の粒子数$N$とエネルギー$E$は、
+\begin{equation}
+N=\sum_{j=1}^mN_j,\quad E\simeq\sum_{j=1}^mE_j
+\tag{3.2.31}
+\label{e:QMDD_revadd1}
+\end{equation}
+を満たす。ここで、粒子間の相互作用は短距離にしか及ばないと仮定し、異なった部分系をまたぐような相互作用のエネルギーを無視した。
+
+全系の状態数$\Omega_{V,N}(E)$を求めるには、(\ref{e:QMDD_revadd1})を満たす範囲でエネルギー$E$と粒子数$N$を$m$個の部分系に配分するやり方を考え、対応する状態数を適切に足し合わせる必要がある。
+ところが、各々の部分系の状態数の$\Omega_{V_0,N'}(E')$が粒子数$N'$とエネルギー$E'$の激しい増加関数であるために、このような足しあわせは実質的には必要ない。粒子数とエネルギーが$m$個の部分系に均等に配分された状況だけを考えれば$\Omega_{V,N}(E)$を十分に正確に評価できるのだ。
+具体的には、$N_0=N/m$, $E_0=E/m$として、
+\begin{equation}
+\Omega_{V,N}(E)\sim\{\Omega_{V_0,N_0}(E_0)\}^m
+\tag{3.2.32}
+\label{e:QMDDADD2}
+\end{equation}
+によって状態数が近似できる。
+この式の両辺の対数を取って$V$で割れば、
+\begin{equation}
+\frac{1}{V}\log\Omega_{V,N}(E)\simeq
+\frac{1}{m\,V_0}\log \{\Omega_{V_0,N_0}(E_0)\}^m
+=\frac{1}{V_0}\log\Omega_{V_0,N_0}(E_0)
+\tag{3.2.33}
+\label{e:QMDDADD3}
+\end{equation}
+となる。
+
+任意の$\epsilon$, $\rho$をとり、$E=\epsilon V$, $N=\rho V$とする。
+すると、$E_0=\epsilon V_0$, $N_0=\rho V_0$である。
+ここで、
+\begin{equation}
+\sigma(\epsilon,\rho):=\frac{1}{V_0}\log\Omega_{V_0,\rho V_0}(\epsilon V_0)
+\tag{3.2.34}
+\label{e:QMDDADD4}
+\end{equation}
+と定義しよう。
+$V_0$を最初に固定したので、$\sigma(\epsilon,\rho)$は$\epsilon$と$\rho$の関数と見てよい。
+\eqref{e:QMDDADD3}の最右辺は$\sigma(\epsilon,\rho)$そのもので、$m$によらないので、ただちに
+\begin{equation}
+\lim_{m\uparrow\infty}\frac{1}{V}\log\Omega_{V,\rho V}(\epsilon V)
+\simeq\sigma(\epsilon,\rho)
+\tag{3.2.35}
+\label{e:QMDDADD4BB}
+\end{equation}
+とできる。
+これで、極限\eqref{e:QMDD28}の存在がいえた。
+同様の考えで$\sigma(\epsilon,\rho)$の凸性も示すことができる（問題~\ref{p:sigmaconv}を見よ）。
+
+
+\bigskip\bigskip
+
+\noindent
+p.~78の問題3.5とその解答を以下に差し替える。
+
+
+
+\bigskip
+\noindent
+{\bf 3.5　[$\sigma(\epsilon,\rho)$が凸関数であること]} 
+体積$V$の立方体を体積$V_1$, $V_2$の二つの直方体に分割する（もちろん$V_1+V_2=V$）。
+77~ページと同様に二つの直方体をまたぐような相互作用は無視できるとし、さらに、状態数は領域の形には依存しないと仮定する（この事実は証明できる）。不等式$\Omega_{V_1+V_2,N_1+N_2}(E_1+E_2)\ge\Omega_{V_1,N_1}(E_1)+\Omega_{V_2,N_2}(E_2)$が成り立つことを示せ。粒子を二つの直方体に割り振る場合の数を考慮すること。この不等式と(3.2.20)より$\sigma(\epsilon,\rho)$が$\epsilon$, $\rho$について上に凸であることを示せ（凸性の定義は付録B-1にある）。
+
+\medskip\noindent
+{\bf 解答：}
+$\widetilde{\Omega}_{V,N}(E):=N!\,{\Omega}_{V,N}(E)$を素直に状態の個数を数えた状態数とする。
+$\widetilde{\Omega}_{V_1+V_2,N_1+N_2}(E_1+E_2)$は体積$V_1+V_2$の立方体に$N_1+N_2$個の粒子が入った系で全エネルギーが$E_1+E_2$以下の状態の総数である。
+一方、$\widetilde{\Omega}_{V_1,N_1}(E_1)\,\widetilde{\Omega}_{V_2,N_2}(E_2)$は、体積$V_1$および$V_2$の直方体にそれぞれにちょうど$N_1$個および$N_2$個の粒子が入り、前者のエネルギーが$E_1$以下、後者のエネルギーが$E_2$以下の状態の総数である。
+よって、異なった直方体に入っている粒子の間の相互作用を無視すると、$\widetilde{\Omega}_{V_1+V_2,N_1+N_2}(E_1+E_2)\ge\{N!/(N_1!N_2!)\}\,\widetilde{\Omega}_{V_1,N_1}(E_1)\,\widetilde{\Omega}_{V_2,N_2}(E_2)$が成り立つ。
+これを${\Omega}_{V,N}(E)$で書き換えたものが求める不等式である。
+
+任意の$\epsilon_1$, $\epsilon_2$, $\rho_1$, $\rho_2$と$0\le\lambda\le1$を満たす$\lambda$について、$V_1=\lambda V$, $V_2=(1-\lambda)V$, $N_1=\rho_1V_1$, $N_2=\rho_2V_2$, $E_1=\epsilon_1V_1$, $E_2=\epsilon_2V_2$とする。
+これを不等式\newline$\Omega_{V_1+V_2,N_1+N_2}(E_1+E_2)\ge\Omega_{V_1,N_1}(E_1)+\Omega_{V_2,N_2}(E_2)$に代入し(3.2.20)を用いて整理すると$\sigma(\lambda\epsilon_1+(1-\lambda)\epsilon_2, \lambda\rho_1+(1-\lambda)\rho_2)\ge\lambda\,\sigma(\epsilon_1,\rho_1)+(1-\lambda)\,\sigma(\epsilon_2,\rho_2)$が得られる。
+これが$\sigma(\epsilon,\rho)$が$\epsilon$, $\rho$について上に凸であるという意味だった。
+
+
+
+
+
+
+\end{document}
+
+
+
