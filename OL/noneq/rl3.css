@@ -1,0 +1,30 @@
+body {
+margin: 1em 1em 1em 2em;
+color: black;
+background-color: #eeeeee
+}
+.senmon{
+color: #8C6136
+}
+.ringo{
+color: #CC0033
+}
+.medatsu {
+font-size: 170%;
+font-weight: bold
+}
+.dl{
+  margin:2em 4em;
+  background: #ddee;ee
+  padding: 0.5em;
+}
+.topic{
+  margin:2em 2em;
+  background: #ffffff;
+  padding: 0.5em;
+}
+.inyou{
+  margin:1em 5em;
+  background: #eeeeee;
+  padding: 0.5em;
+}
