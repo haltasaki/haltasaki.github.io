@@ -1,282 +1,282 @@
 <!-- *********** heading *********** -->
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>
 Remote Lecture / Tips
 </title>
 <link rel="stylesheet" href="mb.css" type="text/css">
 </head>
-<body>
+<body>UTF-8
 
 <!-- *********** top *********** -->
  <p align="right">
-<a href="index.html"><small>�ł��邾���V���v���ȉ��u���ƁE������J�ł�</small></a> / <a href="../hbrl/"><small>�n�C�u���b�h�^�I���f�}���h�u�`��</small></a>
+<a href="index.html"><small>できるだけシンプルな遠隔授業・試作公開版へ</small></a> / <a href="../hbrl/"><small>ハイブリッド型オンデマンド講義へ</small></a>
 </p>
 <h1>
-���u���Ƌ��ލ쐬�ɂ��āi�������������j
+遠隔授業教材作成について（教員向けメモ）
 </h1>
 <!-- *********** main *********** -->
-<p align="right"><SMALL>���J 2020 �N 3 �� 28 �� / �X�V 2020 �N 4 �� 17 �� </SMALL>
+<p align="right"><SMALL>公開 2020 年 3 月 28 日 / 更新 2020 年 4 月 17 日 </SMALL>
 <p>
-<strong>Zoom �Ȃǂ̓��ʂȃT�[�r�X���g�킸�X�}�z����䂠��Ώ����ȒʐM�ʂŎ�u�ł���V���v���ȉ��u���Ƃ̃t�H�[�}�b�g</strong>���Ă���B
-�u�M�K�ɗD�����v���u���Ƃ����b�g�[�ł���B
-�قƂ�ǂ̑�w�ŐV���ȃV�X�e���𓱓������Ɏ����ł���͂����B
-����ɁAPC ��C���^�[�l�b�g��<strong>�s����ȋ����ł��i���̎菕���͕K�v���낤���j������ʂ̍������ނ��i����ɂ��Ă��j�쐬�ł���m�E�n�E���m��</strong>�����J���邱�Ƃ��ڎw���B
-�������̕����Ŏ��삵��<a href="index.html">���u���Ƃ̎���</a>�Ō��J���Ă���B
+<strong>Zoom などの特別なサービスを使わずスマホが一台あれば小さな通信量で受講できるシンプルな遠隔授業のフォーマット</strong>を提案する。
+「ギガに優しい」遠隔授業がモットーである。
+ほとんどの大学で新たなシステムを導入せずに実現できるはずだ。
+さらに、PC やインターネットに<strong>不慣れな教員でも（一定の手助けは必要だろうが）教育効果の高い教材を（自宅にいても）作成できるノウハウを確立</strong>し公開することも目指す。
+私がこの方式で試作した<a href="index.html">遠隔授業の実例</a>で公開している。
 <p>
-�����ɂ܂Ƃ߂��m�E�n�E�̂قƂ�ǂ́A�ŏ��̎���ł̌��J�̌�A�����̐l�����Ɂi��Ƀc�C�b�^�[��ʂ��āj�����Ă������������̂��B��l��l�̂����O�͂����Ȃ����A���̏�Ő[�����ӂ��܂��B
-<small><small>�i���̃y�[�W��<a href="tipsOLD.html">�Â��o�[�W�����͂�����</a>�B�S�����͋C���Ⴄ�̂Ŏc���Ă����B�j</small></small>
+ここにまとめたノウハウのほとんどは、最初の試作版の公開の後、多くの人たちに（主にツイッターを通して）教えていただいたものだ。一人一人のお名前はあげないが、この場で深く感謝します。
+<small><small>（このページの<a href="tipsOLD.html">古いバージョンはこちら</a>。全く雰囲気が違うので残しておく。）</small></small>
 <div class="topic">
 <ul>
-<li><a href="#goals">���p�ړI</a>
-<li><a href="#phil">��{�v�z</a>
-<li><a href="#note">�u�`�m�[�g�ipdf �t�@�C���j</a>
-<li><a href="#rec">�u�`�i�����t�@�C���j</a>
-<li><a href="#webpage">web �y�[�W�̍쐬</a>
-<li><a href="#Windows">�t�^�FWindows �ōu�`��^�����ăT�C�Y�̏����ȃt�@�C���������@</a>�@<strong>�����̕��@��ǉ��I</strong>
-<li><a href="#mac">�t�^�FMac �ōu�`��^�����ăT�C�Y�̏����ȃt�@�C���������@</a>
-<li><a href="#Terminal">�㋉�̕t�^�FMac �ł� Terminal ���g��������</a>
+<li><a href="#goals">利用目的</a>
+<li><a href="#phil">基本思想</a>
+<li><a href="#note">講義ノート（pdf ファイル）</a>
+<li><a href="#rec">講義（音声ファイル）</a>
+<li><a href="#webpage">web ページの作成</a>
+<li><a href="#Windows">付録：Windows で講義を録音してサイズの小さなファイルを作る方法</a>　<strong>推奨の方法を追加！</strong>
+<li><a href="#mac">付録：Mac で講義を録音してサイズの小さなファイルを作る方法</a>
+<li><a href="#Terminal">上級の付録：Mac での Terminal を使った操作</a>
 </ul>
 </div>
 
 <h2>
-<a name="goals">���p�ړI</a>
+<a name="goals">利用目的</a>
 </h2>
-�������̃t�H�[�}�b�g�ł�낤�Ƃ��Ă��邱�Ƃ͓����B
+私がこのフォーマットでやろうとしていることは二つある。
 <p>
-��͖{���̈Ӗ��ł̉��u���ƁB�����͉Ƃŋ��ނ��쐬���A���u�҂͍D���ȏꏊ�ŕ�����B
-���K�̍u�`�ŗp����ۂɂ͌����Ƃ��ċ��ނ͔���J�ɂ���̂��낤�B
-����ɉ����āA�ۑ�̒�o�ƍ̓_�A���[�����Ŏ��₷��V�X�e���𐮂���΁A���Ȃ肵�����肵�����炪�ł���ƐM����B
-�i�ŏ��́u��p�f���v�ɂ����y���Ă����̂����A�f���͏�Ɂu�r�炵�v���������郊�X�N������̂Łi�����āA����ŕ������肷��Ɛ��_�I�_���[�W���傫���̂Łj�s�K�؂Ɣ��f�B�j
+一つは本当の意味での遠隔授業。教員は家で教材を作成し、聴講者は好きな場所で聞ける。
+正規の講義で用いる際には原則として教材は非公開にするのだろう。
+これに加えて、課題の提出と採点、メール等で質問するシステムを整えれば、かなりしっかりした教育ができると信じる。
+（最初は「専用掲示板」にも言及していたのだが、掲示板は常に「荒らし」が発生するリスクがあるので（そして、それで閉鎖したりすると精神的ダメージが大きいので）不適切と判断。）
 <p>
-���������g������z�肵��<a href="sample.html">�u�`�̃��C���y�[�W�̃T���v��</a>������Ă݂��B
+こういう使い方を想定して<a href="sample.html">講義のメインページのサンプル</a>を作ってみた。
 <p>
-������́A��w�Œʏ�̎��Ƃ�����ۂ̌��Ȏ҂ւ̃T�[�r�X�B
+もう一つは、大学で通常の授業をする際の欠席者へのサービス。
 <p>
-���ꂩ�瓖�ʂ́i�����Ȃ蒷�����낤�j�u�y�����ׂł��ϋɓI�ɋx��ł��������v�Ɗw�����w�����邱�ƂɂȂ�B
-�����Ȃ�ƁA�u�u�`�ɏo��͓̂�����O�A���Ȃ͎��ȐӔC�v�Ƃ͌����Ȃ��Ȃ�B
+これから当面は（←かなり長いだろう）「軽い風邪でも積極的に休んでください」と学生を指導することになる。
+そうなると、「講義に出るのは当たり前、欠席は自己責任」とは言えなくなる。
 <p>
-�����ŁA�u�`�̑O�ɂ�������Ƃ����u�`�m�[�g�����A�܂��u�`�ł̃g�[�N��S�Ă��̂܂ܘ^�����A���������̃t�H�[�}�b�g�ŗ��C�҂ɒ񋟂���B
-�c�O�Ȃ���w���͂��̏�ł̎��ⓙ�͂ł��Ȃ����A���Ȃ�̂��Ƃ��w�ׂ邾�낤�B
-�i����́A���ƒ��̃A�h���u�ł̔������Â炭�Ȃ�̂����A�ꍇ�ɂ���ẮA�A�h���u�Ŕ��������Ƃ����Ƃł܂Ƃ߂ču�`�m�[�g�ɒǉ����邱�Ƃ��ł���B�]���Ȏ�Ԃł͂��邪�A�d�����Ȃ��B�j
+そこで、講義の前にしっかりとした講義ノートを作り、また講義でのトークを全てそのまま録音し、それらをこのフォーマットで履修者に提供する。
+残念ながら学生はその場での質問等はできないが、かなりのことが学べるだろう。
+（これは、授業中のアドリブでの板書がやりづらくなるのだが、場合によっては、アドリブで板書したことをあとでまとめて講義ノートに追加することもできる。余分な手間ではあるが、仕方がない。）
 
 
 <h2>
-<a name="phil">��{�v�z</a>
+<a name="phil">基本思想</a>
 </h2>
-Zoom ���g���Ή��u����ł��C���^���N�e�B�u�ȍu�`���ł��邵�A�w���͌��܂������Ԃɂ�����ƍu�`���󂯂��Đ����̃����n�������B
-����͐������̂����A���������{�i�I�ȉ��u�u�`�ɂ����͂���B
+Zoom を使えば遠隔からでもインタラクティブな講義ができるし、学生は決まった時間にきちんと講義が受けられて生活のメリハリもつく。
+それは正しいのだが、そういう本格的な遠隔講義にも問題はある。
 <p>
-�܂��A�X�}�z�����Ńl�b�g�ɃA�N�Z�X���Ă���w���ɂƂ��Ă� Zoom �Ȃǂ̓���z�M�͒ʐM���ւ̕��S�ɂȂ�B
-�u�M�K���؂ꂽ��ōu�`�ɏo��Ȃ��v�Ƃ����󋵂��\���ɂ��肤��B
-����ɁA�����̃T�C�h�ł� Zoom ���̃V�X�e���𗘗p���镉�S�͑傫���B�P�ɍu�`�����邾���łȂ��A�w��������������Ɛڑ��ł��Ă��邩���`�F�b�N����ȂǂȂǂ̎d�����o�Ă���B���Ǝ��Ԃ����܂��Ă��钆�ŁA�l�b�g�֌W�́i�����̏ꍇ�A�����ȁj�g���u���Ŏ��Ԃ��߂��Ă����̂͋��������Ƃ��i�����āA�����������̂��������Ƃ͂悭�����m���Ǝv���j�B
-�����ۓI�Șb������΁A���̓��{�̑�w�����ŁAZoom ���g�������u���Ƃ����Ȃ����ƌ����ĉ��񂩂̍u�K���󂯂ă}�j���A����ǂ�ł����ɑΉ��ł���l�Ƃ����̂́i�������������͕ʂƂ��āj�����ꕔ���Ƃ����̂�����Ƃ��v���B
-�i�������A���̌���ɊÂ񂶂Ă����ƌ����Ă���킯�ł͂Ȃ��B�������w�ѐ������Ȃ��Ă͂����Ȃ��B����͂Ƃ���������ŃX�^�[�g���邽�߂̌����I�Ȓ�Ă̈�ł���B�j
+まず、スマホだけでネットにアクセスしている学生にとっては Zoom などの動画配信は通信料への負担になる。
+「ギガが切れたんで講義に出れない」という状況も十分にありうる。
+さらに、教員のサイドでも Zoom 等のシステムを利用する負担は大きい。単に講義をするだけでなく、学生たちがきちんと接続できているかをチェックするなどなどの仕事が出てくる。授業時間が決まっている中で、ネット関係の（多くの場合、自明な）トラブルで時間が過ぎていくのは虚しいことだ（そして、そういう事故が多いことはよくご存知だと思う）。
+より実際的な話をすれば、今の日本の大学教員で、Zoom を使った遠隔授業をしなさいと言われて何回かの講習を受けてマニュアルを読んですぐに対応できる人というのは（いいか悪いかは別として）ごく一部だというのが実情だとも思う。
+（もちろん、その現状に甘んじていいと言っているわけではない。教員も学び成長しなくてはいけない。これはともかく現状でスタートするための現実的な提案の一つである。）
 <p>
-�����ł́A<strong>Zoom �̂悤�ȍ����ȃT�[�r�X�͂����������p�����A�u�`�m�[�h�Ȃǂ� pdf �t�@�C���ƍu�`�̉����t�@�C����z�M���邾���ŁA�ł������I�ȉ��u���Ƃ��s�Ȃ�</strong>���Ƃ�ڎw�����B
-�u�M�K�ɗD�����v�Ə������悤�ɁA��u���鑤�̒ʐM����}���邱�Ƃ��ŗD��ɍl����B
-�܂��A�����T�C�h�ɂƂ��Ă��A�s����ȃr�f�I�̏����ȂǂɎ��Ԃ��g�킸�A�قƂ�Ǔ��ʂȋ@�ނ��g�킸�A�ȒP�ɋ��ނ��p�ӂł��邱�Ƃ�D�悵���B
+ここでは、<strong>Zoom のような高級なサービスはいっさい利用せず、講義ノードなどの pdf ファイルと講義の音声ファイルを配信するだけで、最も効率的な遠隔授業を行なう</strong>ことを目指した。
+「ギガに優しい」と書いたように、受講する側の通信料を抑えることを最優先に考える。
+また、教員サイドにとっても、不慣れなビデオの準備などに時間を使わず、ほとんど特別な機材を使わず、簡単に教材が用意できることを優先した。
 <p>
-���s����̌��ʁApdf �̓��[�J���ɕۑ��A�����t�@�C���͂��̏�Ńu���E�U�ōĐ����ĕۑ��͂��Ȃ��Ƃ����݌v�ɂȂ��Ă���B
-���u������ɂ́A�茳�ɍu�`�m�[�g�i�ƒm���j���c��Ƃ����_�ł����ʂ̍u�`�Ɠ������B�i���̂��߁A�t�@�C���ւ̃����N�ł́Apdf �ɂ��Ă��������I�� download �Ƃ����^�O������Ă���Bhtml �̃\�[�X���Q�ƁB�j
+試行錯誤の結果、pdf はローカルに保存、音声ファイルはその場でブラウザで再生して保存はしないという設計になっている。
+聴講した後には、手元に講義ノート（と知識）が残るという点でも普通の講義と同じだ。（そのため、ファイルへのリンクでは、pdf についてだけ明示的に download というタグが入れてある。html のソースを参照。）
 
 <h2>
-<a name="note">�u�`�m�[�g�ipdf �t�@�C���j</a>
+<a name="note">講義ノート（pdf ファイル）</a>
 </h2>
-�����g�́i�u�`�̕��͋C���o�����߂ɂ��j�菑���̍u�`�m�[�g���X�L�������� pdf �t�@�C����������BiPad �ōŏ�����菑���̃t�@�C�������l���������낤���A�X���C�h�Ȃǂ� pdf �ɂ��Ă��������낤�i�X���C�h�� pdf �ɂ���ꍇ�́AAdobe Acrobat Pro �Ȃǂ��g���ăt�@�C���̗e�ʂ��ł��邾�����������Ă����ׂ����낤�j�B
+私自身は（講義の雰囲気を出すためにも）手書きの講義ノートをスキャンして pdf ファイルを作った。iPad で最初から手書きのファイルを作る人も多いだろうし、スライドなどを pdf にしてもいいだろう（スライドを pdf にする場合は、Adobe Acrobat Pro などを使ってファイルの容量をできるだけ小さくしておくべきだろう）。
 <p>
-���e�ɂ��Ă͐l���ꂼ�ꂾ�낤���A�������ӂ����̂̓m�[�g�Ƀy�[�W�����������ƁB�܂��A�u�`�ł͐����Ɏ��ԍ����ӂ邱�Ƃ͂Ȃ�����ǁA���������ꍇ�͂�������Ə����Ă������ق��������B�u�`�̒��Ō��y���₷������B����ɁA���u���Ƃ̏ꍇ�́A���[�����Ŏ�����󂯕t���邩��A���̍ۂɂ��ԍ��͏d�󂷂�B
+内容については人それぞれだろうが、私が注意したのはノートにページ数を書くこと。また、講義では数式に式番号をふることはないけれど、こういう場合はしっかりと書いておいたほうがいい。講義の中で言及しやすいから。さらに、遠隔授業の場合は、メール等で質問を受け付けるから、その際にも番号は重宝する。
 
 <h2>
-<a name="rec">�u�`�i�����t�@�C���j</a>
+<a name="rec">講義（音声ファイル）</a>
 </h2>
-���J�Ɋw�K�@�⎩�K�͈͂��w������ pdf �̎��������I�ɓ͂���Ƃ������u���Ƃ̌`�Ԃ����邪�A�l�I�ɂ́A�������u���̐��v�ŗ��C�҂Ɍ�肩����̂́i�u���̐l�ɏK���Ă���v�Ƃ����{�\�I�Ȏ����𐶂ނƂ����Ӗ��ł��j��؂��ƍl���Ă���B
+丁寧に学習法や自習範囲を指示した pdf の資料を定期的に届けるという遠隔授業の形態もあるが、個人的には、教員が「生の声」で履修者に語りかけるのは（「この人に習っている」という本能的な実感を生むという意味でも）大切だと考えている。
 <p>
-�����t�@�C���̍����͒P�Ƀm�[�g�����Ȃ���b���Ę^�����邾�����B
+音声ファイルの作り方は単にノートを見ながら話して録音するだけだ。
 <p>
-�Z�p�I�ɏd�v�Ȃ̂̓t�@�C���̃T�C�Y�����������邱�ƁB
-Mac �ɕt���� QuickTimePlayer �Ř^������� 1 ���Ԃ̍u�`�̃t�@�C���̗e�ʂ��������� 100 MB = 0.1 GB �ɂȂ����B
-�i�t�L�F���͍ŏI�I�ɂ� iPhone �� voice memos �Ř^�����A����� Mac �ɓ]�����Ĉ��k��������ɗ����������B�j
-����ł́u�M�K�ɗD�����v�Ƃ͌����Ȃ������łȂ��A�_�E�����[�h�ɂ����Ԃ�������i��q����悤�ɁA�����t�@�C���͎O�ȏ�ɕ������ׂ������A����ł��_�E�����[�h�Ɏ��Ԃ�������j�B
-���������l�̐��𕷂������Ȃ�A�����������Ɨ��Ƃ��Ă����v�ł���B�c�C�b�^�[�ŁA�����𗎂Ƃ��Ă�� 10 ���� 1 �̃T�C�Y�ɂ�����@�������Ă�������B����Ŏ��p�ɂȂ�Ɣ��f�����B
-�^����t�@�C�����k�E�t�@�C�������̕��@�ɂ��ẮA�ȉ����Q�ƁB
+技術的に重要なのはファイルのサイズを小さくすること。
+Mac に付属の QuickTimePlayer で録音すると 1 時間の講義のファイルの容量がだいたい 100 MB = 0.1 GB になった。
+（付記：私は最終的には iPhone の voice memos で録音し、それを Mac に転送して圧縮するやり方に落ち着いた。）
+これでは「ギガに優しく」とは言えないだけでなく、ダウンロードにも時間がかかる（後述するように、音声ファイルは三つ以上に分割すべきだが、それでもダウンロードに時間がかかる）。
+そもそも人の声を聞くだけなら、音質をずっと落としても大丈夫である。ツイッターで、音質を落としてを約 10 分の 1 のサイズにする方法を教えてもらった。これで実用になると判断した。
+録音やファイル圧縮・ファイル結合の方法については、以下を参照。
 <p>
-�u�`�m�[�g�����Ȃ���b������Ƃ����_�ł͕��i�̍u�`�Ɠ����Ȃ̂����A�r���ōD���Ȏ��ɘ^�����|�[�Y�ł���Ƃ����̂͑傫�ȃA�h�o���e�[�W���B
-�؂�ڂ̂����Ƃ���Ń|�[�Y���āA���ݕ�������ōA����������A�m�[�g�̐���n�ǂ��ē��ɓ���Đ������l������A�Ƃ��������Ƃ��ł���B
-�܂��A�傫�����s�����Ƃ��ɂ͂����Ř^�����~�߂āA�_���ȕ������J�b�g���āA���̐��^�����邱�Ƃ��ł���B
-�ڂ̑O�ɂ���w���̔����������Ȃ��̂͌���ȃn���f�B�����A���̑���A�����������H�v�����邱�ƂŃg�[�N�̎����グ�邱�Ƃ͂ł��邩������Ȃ��B
+講義ノートを見ながら話をするという点では普段の講義と同じなのだが、途中で好きな時に録音をポーズできるというのは大きなアドバンテージだ。
+切れ目のいいところでポーズして、飲み物を飲んで喉を潤したり、ノートの先を熟読して頭に入れて説明を考えたり、といったことができる。
+また、大きく失敗したときにはそこで録音を止めて、ダメな部分をカットして、その先を録音することもできる。
+目の前にいる学生の反応が見られないのは激烈なハンディだが、その代わり、こういった工夫をすることでトークの質を上げることはできるかもしれない。
 <p>
-�����t�@�C���͈�ɂ��Ȃ��ŎO���炢�ɕ�������̂��]�܂����B
-����ɂ́A�������̂���l�Œ����Ă���ƏW�����؂��̂œr���ŋx�e�╜�K��ۑ�����ނ̂������Ƃ�������I�ȗ��R�ƁA�l�b�g�ւ̐ڑ����s����ɂȂ��ăt�@�C���̃_�E�����[�h���~�܂��Ă��܂����ۂɎ������񂪏��Ȃ��Ƃ����Z�p�I�ȗ��R������B
+音声ファイルは一つにしないで三つくらいに分割するのが望ましい。
+これには、長いものを一人で聴いていると集中が切れるので途中で休憩や復習や課題を挟むのがいいという教育的な理由と、ネットへの接続が不安定になってファイルのダウンロードが止まってしまった際に失われる情報が少ないという技術的な理由がある。
 <p>
-���ɁA�^������ۂɒ��ӂ����̂́A�����듮�����S���Ȃ��̂ŁA�u�`�m�[�g�̓��������𒮍u�҂ɂ����Ă��炦��悤�A�������A�y�[�W�ԍ��⎮�ԍ��Ɍ��y���Ă���Ƃ������Ƃ��炢���B
-�܂��A���u�҂��Đ���p�ɂɃ|�[�Y����̂́i���ɃX�}�z�ł́j�s�ւȂ̂ŁA�Ȃ�ׂ��A�|�[�Y�Ȃ��ɂ��̂܂ܒ�����悤�ɘb���̂��������낤�ƃA�h�o�C�X����������B
+他に、録音する際に注意したのは、何しろ動きが全くないので、講義ノートの同じ部分を聴講者にも見てもらえるよう、しつこく、ページ番号や式番号に言及しているということくらいか。
+また、聴講者が再生を頻繁にポーズするのは（特にスマホでは）不便なので、なるべく、ポーズなしにそのまま聴けるように話すのがいいだろうとアドバイスをもらった。
 
 <h2>
-<a name="webpage">web �y�[�W�̍쐬</a>
+<a name="webpage">web ページの作成</a>
 </h2>
-�T���v���� web �y�[�W�i<a href="index.html">���u���ƃT���v��</a>�A<a href="sample.html">�u�`�̃��C���y�[�W�̃T���v��</a>�j�͊ȒP�ȃe�L�X�g�G�f�B�^�[�����ō�����B
-�o���̂Ȃ��l�� web �y�[�W�̍쐬��Ǘ��Ɍ˘f����������Ȃ����A���ۂ͂�邱�Ƃ͌����ē���Ȃ��B
+サンプルの web ページ（<a href="index.html">遠隔授業サンプル</a>、<a href="sample.html">講義のメインページのサンプル</a>）は簡単なテキストエディターだけで作った。
+経験のない人は web ページの作成や管理に戸惑うかもしれないが、実際はやることは決して難しくない。
 <p>
-�Ⴆ�΁A�w�K�@��w�̊��ł́A��w�̃A�J�E���g�̑R��ׂ��Ƃ���ɑR��ׂ����O�̃t�H���_�[�����A���̒��ɁA�K�؂ȃ����N���������� index.html �Ƃ����t�@�C���ƁA���Ƃ́Apdf �t�@�C���ƁA�����t�@�C�������邾���ŏI���B
-���̏ꍇ�́A����������o���ɑS�Ă̍�Ƃ��ł����B
-�e��w�ȂǂŒS���̐l�� web ���D���Ȑl�ɖ₢���킹��Ƃ������낤�B
+例えば、学習院大学の環境では、大学のアカウントの然るべきところに然るべき名前のフォルダーを作り、その中に、適切なリンクを書き込んだ index.html というファイルと、あとは、pdf ファイルと、音声ファイルを入れるだけで終わり。
+私の場合は、自宅から一歩も出ずに全ての作業ができた。
+各大学などで担当の人や web が好きな人に問い合わせるといいだろう。
 <p>
-�u�K�؂ȃ����N���������� index.html �Ƃ����t�@�C���v�ɂ��ẮA���̂������V���v�������A
+「適切なリンクを書き込んだ index.html というファイル」については、ものすごくシンプルだが、
 <p>
-<a href="templates/index.html" download="index.html">�e���v���[�g�� html �t�@�C��</a>
+<a href="templates/index.html" download="index.html">テンプレートの html ファイル</a>
 <p>
-������Ă������̂Ń_�E�����[�h���ĎQ�Ƃ��Ăق����B
-�e�L�X�g�G�f�B�^�[�Œ��g������ƁA�������牽������Ă��邩�킩��͂����B
-�u�`������邱�Ƃ�z�肵�ď����Ă���̂ŁA���炵����A���₵���肵�Ăق����B
-���炩�Ƀt�@�C�����������Ƃ��낪����̂ŁA�����ɂ������ō�����t�@�C���̖��O���������ނ����B
+を作っておいたのでダウンロードして参照してほしい。
+テキストエディターで中身を見ると、自ずから何をやっているかわかるはずだ。
+講義が二つあることを想定して書いているので、減らしたり、増やしたりしてほしい。
+明らかにファイル名を書くところがあるので、そこにご自分で作ったファイルの名前を書き込むだけ。
 
 
 
 <h2>
-<a name="Windows">�t�^�FWindows �ōu�`��^�����ăT�C�Y�̏����ȃt�@�C���������@</a>
+<a name="Windows">付録：Windows で講義を録音してサイズの小さなファイルを作る方法</a>
 </h2>
-��ł��q�ׂ��悤�ɁA�u�M�K�ɗD�����v�����I�ȉ��u���Ƌ��ނ����ۂɁA�T�C�Y�̏����ȉ����t�@�C������邱�Ƃ��i���Ȃ��Ƃ��Z�p�ʂł́j�ł��d�v�ł���B
-�ڈ��Ƃ��� 1 ���Ԃ̉����t�@�C���� 10 MB ���x�i���邢�͂���ȉ��j�Ɏ��܂�̂��]�܂����B
-�K���AMac �ɂ��ẮA<a href="#mac">���ɂ܂Ƃ߂�</a>�悤�ɁAMac �ɕt�����Ă�����̂������g���āi����Ȃ�Ɂj�V���v���ɂł��邱�Ƃ���������̂����AWindows �̏ꍇ�͂������������͂Ȃ��悤���B
+上でも述べたように、「ギガに優しく」現実的な遠隔授業教材を作る際に、サイズの小さな音声ファイルを作ることが（少なくとも技術面では）最も重要である。
+目安として 1 時間の音声ファイルが 10 MB 程度（あるいはそれ以下）に収まるのが望ましい。
+幸い、Mac については、<a href="#mac">下にまとめる</a>ように、Mac に付属しているものだけを使って（それなりに）シンプルにできることを教わったのだが、Windows の場合はそういうやり方はないようだ。
 <p>
-�������AAudacity �Ƃ����A�v���P�[�V�������C���X�g�[������΁A���Ȃ�ȒP�ɖ]�܂��������t�@�C�������邱�Ƃ��w�K�@��w�v�Z�@�Z���^�[�x���g�D�݂̂Ȃ��񂪂܂Ƃ߂Ă����������i���肪�Ƃ��I�j�B���̕��@�𐄏�����B
+ただし、Audacity というアプリケーションをインストールすれば、かなり簡単に望ましい音声ファイルが作れることを学習院大学計算機センター支援組織のみなさんがまとめてくださった（ありがとう！）。この方法を推奨する。
 <p>
-�A�v���P�[�V�������C���X�g�[���������Ȃ��ꍇ�́A�{�C�X���R�[�_�[�� web ��̕ϊ��A�v�����g�����@���ł���y�Ȃ̂Ő�������B
+アプリケーションをインストールしたくない場合は、ボイスレコーダーと web 上の変換アプリを使う方法が最も手軽なので説明する。
 
 <h3>
-Audacity ���g���i����𐄏��j
+Audacity を使う（これを推奨）
 </h3>
-Audacity �Ƃ����L���ȃI�[�v���\�[�X�́i���Ȃ葽�@�\�ȁj�A�v���P�[�V������p������@�B
+Audacity という有名なオープンソースの（かなり多機能な）アプリケーションを用いる方法。
 <p>
-<a href="https://www-cc.gakushuin.ac.jp/~support/faq/quickmanual/shien_audacity.pdf" target="_blank" rel="noopener">�w�K�@��w�v�Z�@�Z���^�[�x���g�D�݂̂Ȃ��񂪍���Ă����������f���炵���܂Ƃ�</a>�����Q�Ƃ��������B
+<a href="https://www-cc.gakushuin.ac.jp/~support/faq/quickmanual/shien_audacity.pdf" target="_blank" rel="noopener">学習院大学計算機センター支援組織のみなさんが作ってくださった素晴らしいまとめ</a>をご参照ください。
 
 
 <h3>
-�{�C�X���R�[�_�[�� web ��̃t�@�C���ϊ��T�[�r�X�𗘗p������@�i�W���̃A�v���������g���Ȃ炱��j
+ボイスレコーダーと web 上のファイル変換サービスを利用する方法（標準のアプリだけを使うならこれ）
 </h3>
-Windows �ɂ͕W���Ń{�C�X���R�[�_�[�Ƃ����i���̂܂�܂����j����^������A�v�����t���Ă���B
-�i<a href="https://support.microsoft.com/ja-jp/help/4028308/windows-10-how-to-use-voice-recorder">�����̐���</a>������ƃg���~���O���ł���炵���B�܂��A���̐����ɂ͏����ĂȂ����ǁA�^�����n�߂�ƍ����Ƀ|�[�Y�{�^�����o������Ƃ̂��ƁB�j
-�܂��A����ōu�`��^�����A�t�@�C����ۑ�����B
-�i���� Windows ���g��Ȃ��̂ŉ����킩���Ă��܂���B���̒i�K�Œ��ӂ��ׂ����Ƃ��������狳���Ă��������B���������܂��B�j
-�������i�c�C�b�^�[�ŋ�������󂯔��肾���j�f�t�H���g�̃r�b�g���[�g�� 175 kbps �Ȃ̂ŁA1 ���Ԃ̃I�[�f�B�I�t�@�C������ 80 MB ���x�ɂȂ�B����͑傫������B
+Windows には標準でボイスレコーダーという（そのまんまだが）声を録音するアプリが付いている。
+（<a href="https://support.microsoft.com/ja-jp/help/4028308/windows-10-how-to-use-voice-recorder">公式の説明</a>を見るとトリミングもできるらしい。また、この説明には書いてないけど、録音を始めると左下にポーズボタンも出現するとのこと。）
+まず、これで講義を録音し、ファイルを保存する。
+（私は Windows を使わないので何もわかっていません。この段階で注意すべきことがあったら教えてください。書き足します。）
+ただし（ツイッターで教わった受け売りだが）デフォルトのビットレートが 175 kbps なので、1 時間のオーディオファイルだと 80 MB 程度になる。これは大きすぎる。
 <p>
-�T�C�Y�����������邽�߁A<a href="https://online-audio-converter.com/ja/">online Audio Coverter</a> �Ƃ��� web ��̖����T�[�r�X���i���C���Ђ��邪�j�g�����Ƃɂ���B
+サイズを小さくするため、<a href="https://online-audio-converter.com/ja/">online Audio Coverter</a> という web 上の無料サービスを（やや気がひけるが）使うことにする。
 <p>
-�g�����͊ȒP�����A�v�����������B
-��̃y�[�W���J���A�܂� 1 �́u�t�@�C�����J���v��I��Ŏw���ɏ]���Ĉ��k�������t�@�C����I���B
-�t�@�C���̓ǂݍ��݂��n�܂�i���F�Ői�s�󋵂��킩��j�A���΂炭����Ɓi�t�@�C���������Ƃ���Ȃ�Ɏ��Ԃ�������j�u�t�@�C�����J���v�̉E���Ƀt�@�C�������\�������B
-���������� 2 �� m4a ��I�сA�X���C�h�o�[����ԍ��́u�G�R�m�~�[�v�ɁB
-���Ɂu�ڍ׏��v���N���b�N���āA�r�b�g���[�g�� 16 kbps�A�T���v�����[�g�� 16000 kHz �ɐݒ�B
-���������� 3 �́u�ϊ��v���N���b�N����B
-���Ƃ́A�w���ɏ]���ă_�E�����[�h����ƁA���@�̂悤�ɏ������t�@�C�����ł��Ă���B
-�����T�[�r�X�Ɋ��ӂ��Ďg���B
-�i�Ȃ��A�T�C�Y������������ɂ� m4a ���L�����Ƃ̂��ƁB�r�b�g���[�g��T���v�����[�g�͋����Ă���������Ȃ̂ŁA���s���낵�čD�݂̉�����T���Ăق����B24 kbps �ɂ���Ώ\���Ƃ��v����B�j
+使い方は簡単だが、要所を説明する。
+上のページを開き、まず 1 の「ファイルを開く」を選んで指示に従って圧縮したいファイルを選択。
+ファイルの読み込みが始まり（青い色で進行状況がわかる）、しばらくすると（ファイルが長いとそれなりに時間がかかる）「ファイルを開く」の右側にファイル名が表示される。
+そうしたら 2 で m4a を選び、スライドバーを一番左の「エコノミー」に。
+次に「詳細情報」をクリックして、ビットレートを 16 kbps、サンプルレートを 16000 kHz に設定。
+そうしたら 3 の「変換」をクリックする。
+あとは、指示に従ってダウンロードすると、魔法のように小さいファイルができている。
+無料サービスに感謝して使う。
+（なお、サイズを小さくするには m4a が有利だとのこと。ビットレートやサンプルレートは教えてもらった一例なので、試行錯誤して好みの音質を探してほしい。24 kbps にすれば十分とも思われる。）
 <p>
-�܂��A������Ђ̖����T�[�r�X�� <a href="https://audio-joiner.com/ja/">Audio Joiner</a> �Ƃ����̂�����̂ŁA������g���Ε����̉����t�@�C�����������邱�Ƃ��ł��������B
-�����킩�����狳���Ă��������B
+また、同じ会社の無料サービスで <a href="https://audio-joiner.com/ja/">Audio Joiner</a> というのがあるので、これを使えば複数の音声ファイルを結合することもできそうだ。
+何かわかったら教えてください。
 
 <!-- *********** top ***********
 
 <h3>
-Audacity �� mp3 �ɏ����o��
+Audacity で mp3 に書き出す
 </h3>
-Audacity �Ƃ����L���ȃI�[�v���\�[�X�́i���Ȃ葽�@�\�ȁj�A�v���P�[�V������p����B
+Audacity という有名なオープンソースの（かなり多機能な）アプリケーションを用いる。
 <p>
-Audacity �𗧂��グ��ƁA���̂܂ܘ^���ł���E�B���h�E���o��̂œ����}�C�N���Ř^������B
-�I�������A�ump3 ���i���ɕϊ��E�����o���v����Ƃ��Ȃ菬�����Ȃ�B
+Audacity を立ち上げると、そのまま録音できるウィンドウが出るので内蔵マイク等で録音する。
+終わったら、「mp3 中品質に変換・書き出し」するとかなり小さくなる。
 
 <h3>
-Audacity �� ffmepg ��p����
+Audacity と ffmepg を用いる
 </h3>
-<a href="https://fosshub.com/Audacity.html/audacity-win-2.3.3.exe">https://fosshub.com/Audacity.html/audacity-win-2.3.3.exe</a> �� <a href="https://lame.buanzo.org/ffmpeg-win-2.2.2.exe">https://lame.buanzo.org/ffmpeg-win-2.2.2.exe</a> ���_�E�����[�h���ăC���X�g�[������B
-Audacity ���N����, �^���{�^��������, �^�����I������ۂ͒�~�{�^����������Audacity��Ƀe���|�����ɘ^�������. ������t�@�C��-> Export ����I�[�f�B�I�̏����o��, �Ńt�@�C���̎�ނ��uFFmpeg�����o�����J�X�^�}�C�Y�v�Ƃ���, ���Ƃ͍D�݂̐ݒ��m4a�t�@�C�����쐬�\. �Ⴆ�� VBR 24kbps, 16 kHz �ȂǂƂ���B
+<a href="https://fosshub.com/Audacity.html/audacity-win-2.3.3.exe">https://fosshub.com/Audacity.html/audacity-win-2.3.3.exe</a> と <a href="https://lame.buanzo.org/ffmpeg-win-2.2.2.exe">https://lame.buanzo.org/ffmpeg-win-2.2.2.exe</a> をダウンロードしてインストールする。
+Audacity を起動し, 録音ボタンを押し, 録音を終了する際は停止ボタンを押すとAudacity上にテンポラリに録音される. これをファイル-> Export からオーディオの書き出し, でファイルの種類を「FFmpeg書き出しをカスタマイズ」として, あとは好みの設定でm4aファイルを作成可能. 例えば VBR 24kbps, 16 kHz などとする。
 
 
 <h3>
-���k�\�t�g
+圧縮ソフト
 </h3>
-<a href="https://www.gigafree.net/media/encode/BatchEncoder.html">https://www.gigafree.net/media/encode/BatchEncoder.html</a>  �ɂ���A�v�����g���A m4a -qaac constrained VBR 24 kbps�Ńt�@�C�������k�ł���B
-�������A�{�C�X���R�[�_�[�ō�����t�@�C���ɂ͎g���Ȃ������B
+<a href="https://www.gigafree.net/media/encode/BatchEncoder.html">https://www.gigafree.net/media/encode/BatchEncoder.html</a>  にあるアプリを使い、 m4a -qaac constrained VBR 24 kbpsでファイルが圧縮できる。
+しかし、ボイスレコーダーで作ったファイルには使えなかった。
 
 
  -->
 
 <h2>
-<a name="mac">�t�^�FMac �ōu�`��^�����ăT�C�Y�̏����ȃt�@�C���������@</a>
+<a name="mac">付録：Mac で講義を録音してサイズの小さなファイルを作る方法</a>
 </h2>
-��ł��q�ׂ��悤�ɁA�u�M�K�ɗD�����v�����I�ȉ��u���Ƌ��ނ����ۂɁA�T�C�Y�̏����ȉ����t�@�C������邱�Ƃ��i���Ȃ��Ƃ��Z�p�ʂł́j�ł��d�v�ł���B
-�K���AMac �̏ꍇ�́i�c�C�b�^�[�ŋɂ߂ďڂ����l�ɒ��J�ɋ����Ă�������������Łj����قǓ���͂Ȃ����@���킩�����B
+上でも述べたように、「ギガに優しく」現実的な遠隔授業教材を作る際に、サイズの小さな音声ファイルを作ることが（少なくとも技術面では）最も重要である。
+幸い、Mac の場合は（ツイッターで極めて詳しい人に丁寧に教えてもらったおかげで）それほど難しくはない方法がわかった。
 <p>
-�ȉ��A�����c�C�b�^�[�ŋ�����Ă��܂����������@���q�ׂ�i���� OS �� Siera �ł��B����x��ł��j�B
-UNIX �R�}���h�� Terminal �̑����S���m��Ȃ����Ƃ�O��ɐ�������i���̒m�����قڃ[���j�B
-�⑫��R�����g������Ί��}���܂��B
+以下、私がツイッターで教わってうまくいった方法を述べる（私の OS は Siera です。時代遅れです）。
+UNIX コマンドや Terminal の操作を全く知らないことを前提に説明する（私の知識もほぼゼロ）。
+補足やコメントがあれば歓迎します。
 <p>
-�ȉ��A�����t�@�C������������ꍇ�ƁA�����t�@�C���𕡐�����Ă�������ꍇ�i�����炪�����j�ɂ��ď����Ă����B
-�i�t�L�F�Ȃ��A���͍ŏI�I�ɂ� iPhone �� voice memos �Ř^�����A����� Mac �ɓ]�����Ĉ��k��������ɗ����������B����Ă���Ε����̃t�@�C������������K�v�͂قƂ�ǐ����Ȃ��Ȃ����B�����āAvoice memos �Ȃ玸�s���Ă����ɖ߂��ď㏑�����ł���B�j
+以下、音声ファイルを一つだけ作る場合と、音声ファイルを複数作ってくっつける場合（こちらが推奨）について書いておく。
+（付記：なお、私は最終的には iPhone の voice memos で録音し、それを Mac に転送して圧縮するやり方に落ち着いた。慣れてくれば複数のファイルをくっつける必要はほとんど生じなくなった。加えて、voice memos なら失敗しても元に戻って上書きもできる。）
 
 <h3>
-��̉����t�@�C�������A��������k������@
+一つの音声ファイルを作り、それを圧縮する方法
 </h3>
-Quick Time Player �� File -> New Audio Recording ��I�ԁB
+Quick Time Player で File -> New Audio Recording を選ぶ。
 <p>
-�����ȃE�B���h�E���o��̂ŁA�^���{�^�����N���b�N����Ƙ^�����n�܂�B�����l���� Mac �ɂ��Ă���i�ǂ��H�j�}�C�N���g�����������͏\���������B
+小さなウィンドウが出るので、録音ボタンをクリックすると録音が始まる。何も考えず Mac についている（どこ？）マイクを使ったが音質は十分だった。
 <p>
-�^�����ꎞ��~����Ƃ��ɂ� option �������Ȃ���A�E�B���h�E�ɏo�Ă���{�^�����N���b�N����B�܂��N���b�N����΍ĊJ�ł���B
+録音を一時停止するときには option を押しながら、ウィンドウに出ているボタンをクリックする。またクリックすれば再開できる。
 <P>
-�E�B�h�E�ɏo�Ă���{�^�����N���b�N����Ƙ^�����I������BUntitled �Əo�Ă���̂ŁAFile -> Save... ��I�ԂƁA�����̂悤�ɕۑ���ƃt�@�C�����𕷂��Ă���̂ŁAoriginal.m4a �̂悤�ɖ��O�����č�Ɨp�̃t�H���_�[�ɕۑ��B
+ウィドウに出ているボタンをクリックすると録音が終了する。Untitled と出てくるので、File -> Save... を選ぶと、いつものように保存先とファイル名を聞いてくるので、original.m4a のように名前をつけて作業用のフォルダーに保存。
 <p>
-��������k���āu�M�K�ɗD�����v�����t�@�C���ɂ���B
+これを圧縮して「ギガに優しい」音声ファイルにする。
 <p>
-���̂��߂� Terminal �Ƃ��� Mac �ɕt�����Ă���A�v�����J���B�̂̃R���s���[�^�[�݂����Ȃ̂��o�Ă���B
-�i�ǂ����Ă� Terminal ���g�������Ȃ��ꍇ�́Aweb ��̖����t�@�C�����k�T�[�r�X���g�����Ƃ��ł���B���̏ꍇ�́u<a href="#Windows">Windows �ōu�`��^��������@</a>�v�́u�{�C�X���R�[�_�[�� web ��̃t�@�C���ϊ��T�[�r�X�𗘗p������@�v�ɂ��̂܂܏]���΂悢�B���̂����̕��������ȃt�@�C�����ł���B�j
+そのために Terminal という Mac に付属しているアプリを開く。昔のコンピューターみたいなのが出てくる。
+（どうしても Terminal を使いたくない場合は、web 上の無料ファイル圧縮サービスを使うこともできる。その場合は「<a href="#Windows">Windows で講義を録音する方法</a>」の「ボイスレコーダーと web 上のファイル変換サービスを利用する方法」にそのまま従えばよい。このやり方の方が小さなファイルができる。）
 <p>
-�^�������t�@�C�������H���邽�߁A���A��Ƃ��Ă���t�H���_�[�Ɉړ�����B
-���̂��߂ɁA�܂� Terminal �̒[���� cd �ƃX�y�[�X���^�C�v����B���^�[���͉����Ȃ��B
-���̂܂� Finder �ɂ����āA���A���H�������Ǝv���Ă��鉹���t�@�C���������Ă���t�H���_�[���ATerminal �̃E�B���h�E�� drag and drop ����B
-����ƁAcd �̌�ɁA���̃t�H���_�[�́u�Ԓn�v���^�C�v�����B
-�����Ń��^�[���������B
-����ŁA�ړ������͂��B
-Terminal �� ls�i�G���A�G�X�j�ƃ^�C�v���ă��^�[���������Ă݂āA��Ƃ������t�@�C���̖��O���o�Ă���ΐ����B
+録音したファイルを加工するため、今、作業しているフォルダーに移動する。
+そのために、まず Terminal の端末に cd とスペースをタイプする。リターンは押さない。
+そのまま Finder にいって、今、加工したいと思っている音声ファイルが入っているフォルダーを、Terminal のウィンドウに drag and drop する。
+すると、cd の後に、このフォルダーの「番地」がタイプされる。
+そこでリターンを押す。
+これで、移動したはず。
+Terminal に ls（エル、エス）とタイプしてリターンを押してみて、作業したいファイルの名前が出てくれば成功。
 <p>
-����������A
+そうしたら、
 <pre>
 afconvert original.m4a -f m4af -d aacp -b 24000 -o compressed.m4a
 </pre>
-�Ƃ����������^�C�v�i�R�s�y�j���ă��^�[���������B
-�������Ԃ������邪�A�T�C�Y�� 10 ���� 1 ���炢�ɂȂ��������t�@�C�� compressed.m4a ���ł���B
-���� compressed.m4a ���D���Ȗ��O�im4a �Ƃ����Ƃ���͕ς��Ȃ��j�ɕύX���āi���邢�́A��̎������D���Ȗ��O�ɒu�������āj�g���B
+という呪文をタイプ（コピペ）してリターンを押す。
+少し時間がかかるが、サイズが 10 分の 1 くらいになった音声ファイル compressed.m4a ができる。
+この compressed.m4a を好きな名前（m4a というところは変えない）に変更して（あるいは、上の呪文を好きな名前に置き換えて）使う。
 
 <h3>
-�����̉����t�@�C�������A�������������Ĉ�̈��k�����t�@�C���������@
+複数の音声ファイルを作り、それらをくっつけて一つの圧縮したファイルを作る方法
 </h3>
-Quick Time Player �� File -> New Audio Recording ��I�ԁB
+Quick Time Player で File -> New Audio Recording を選ぶ。
 <p>
-�����ȃE�B���h�E���o��̂ŁA�^���{�^�����N���b�N����Ƙ^�����n�܂�B�����l���� Mac �ɂ��Ă���i�ǂ��H�j�}�C�N���g�����������͏\���������B
+小さなウィンドウが出るので、録音ボタンをクリックすると録音が始まる。何も考えず Mac についている（どこ？）マイクを使ったが音質は十分だった。
 <p>
-�^�����ꎞ��~����Ƃ��ɂ� option �������Ȃ���A�E�B���h�E�ɏo�Ă���{�^�����N���b�N����B�܂��N���b�N����΍ĊJ�ł���B
+録音を一時停止するときには option を押しながら、ウィンドウに出ているボタンをクリックする。またクリックすれば再開できる。
 <P>
-�E�B�h�E�ɏo�Ă���{�^�����N���b�N����Ƙ^�����I������BUntitled �Əo�Ă���̂ŁAFile -> Save... ��I�ԂƁA�����̂悤�ɕۑ���ƃt�@�C�����𕷂��Ă���̂ŁA001.m4a �̂悤�ɐ����̖��O�����Č��܂�����Ɨp�̃t�H���_�[�ɕۑ��B
+ウィドウに出ているボタンをクリックすると録音が終了する。Untitled と出てくるので、File -> Save... を選ぶと、いつものように保存先とファイル名を聞いてくるので、001.m4a のように数字の名前をつけて決まった作業用のフォルダーに保存。
 <p>
-�^���̍Ō�ŃO�_�O�_�ɂȂ��Ă��܂����̂ŁA�����͂Ȃ��ɂ������Ƃ��������Ƃ͑����͂��B
-�t�@�C����I�񂾏�ԂŁAEdit -> Trim �Ƃ��ƁA�Ȃ񂩕ςȉ��F���g���o�Ă���i����Ă݂āj�B����ŁA�g�̍��E�𓮂����ƁA�t�@�C���̑O����������Ƃ��ł���B�܁A����Ă݂Ă��������B���ƒ��ϓI�ł��B
+録音の最後でグダグダになってしまったので、そこはなしにしたいとかいうことは多いはず。
+ファイルを選んだ状態で、Edit -> Trim とやると、なんか変な黄色い枠が出てくる（やってみて）。これで、枠の左右を動かすと、ファイルの前後を消すことができる。ま、やってみてください。割と直観的です。
 <p>
-�����̃t�@�C���������������Ȃ̂ŁA�ȉ��A�^���𑱂��āA002.m4a, 003.m4a �Ƃ������t�@�C��������Ă����B
+複数のファイルをくっつけるつもりなので、以下、録音を続けて、002.m4a, 003.m4a といったファイルを作っていく。
 <p>
-�Ō�ɁA�����̃t�@�C����ڍ����A�����k���āu�M�K�ɗD�����v�����t�@�C���ɂ���B
+最後に、これらのファイルを接合し、かつ圧縮して「ギガに優しい」音声ファイルにする。
 <p>
-���̂��߂� Terminal �Ƃ����A�v�����J���B�̂̃R���s���[�^�[�݂����Ȃ̂��o�Ă���B
+そのために Terminal というアプリを開く。昔のコンピューターみたいなのが出てくる。
 <p>
-�^�������t�@�C�������H���邽�߁A���A��Ƃ��Ă���t�H���_�[�Ɉړ�����B
-���̂��߂ɁA�܂� terminal �̒[���� cd �ƃX�y�[�X���^�C�v����B���^�[���͉����Ȃ��B
-���̂܂� Finder �ɂ����āA���A���H�������Ǝv���Ă��鉹���t�@�C���������Ă���t�H���_�[���ATerminal �̃E�B���h�E�� drag and drop ����B
-����ƁAcd �̌�ɁA���̃t�H���_�[�́u�Ԓn�v���^�C�v�����B
-�����Ń��^�[���������B
-����ŁA�ړ������͂��B
-Terminal �� ls�i�G���A�G�X�j�ƃ^�C�v���ă��^�[���������Ă݂āA��Ƃ������t�@�C���̈ꗗ���o�Ă���ΐ����B
+録音したファイルを加工するため、今、作業しているフォルダーに移動する。
+そのために、まず terminal の端末に cd とスペースをタイプする。リターンは押さない。
+そのまま Finder にいって、今、加工したいと思っている音声ファイルが入っているフォルダーを、Terminal のウィンドウに drag and drop する。
+すると、cd の後に、このフォルダーの「番地」がタイプされる。
+そこでリターンを押す。
+これで、移動したはず。
+Terminal に ls（エル、エス）とタイプしてリターンを押してみて、作業したいファイルの一覧が出てくれば成功。
 <p>
-����������A
+そうしたら、
 <pre>
 afconvert 001.m4a -f adts -d 'aac '
 afconvert 002.m4a -f adts -d 'aac '
@@ -286,48 +286,48 @@ afconvert 005.m4a -f adts -d 'aac '
 cat *aac > merge.aac
 afconvert merge.aac -f m4af -d aacp -b 24000
 </pre>
-�Ƃ���������p�ӂ���B
-�����ŁA�t�@�C�����������Ă���s�́A���ۂɂ����������t�@�C���ɍ��킹�đ���������B
-���̎����S�̂��R�s�[���āATerminal �Ƀy�[�X�g����B�Ō�Ƀ��^�[�����K�v�����B
-�������Ԃ������邪�A���܂������ƁA��Ƃ��Ă���t�H���_�[�̒��ɂǂ�ǂ�V�����t�@�C�����ł���B
-�S����������Ƃ���ŁAmerge.m4a �Ƃ����t�@�C�����ł��Ă���͂��ŁA���ꂪ�ŏI�I�ɗ~�������́B�K���ɖ��O��t���ւ��Ďg���B
-1���Ԃ̃g�[�N�� 10 MB ���炢�̂��Ȃ菬���ȃt�@�C�����ł���͂��B
-�i�Ȃ��A������ aac �����t�@�C��������邪�A�����͑S�ď������Ă悢�B�����̍Ō�� <code>rm *.aac</code> �Ƃ��Ώ�����̂����A���̂��N����ƕ|���̂ŁA����͏����Ă��Ȃ��B�j
+という呪文を用意する。
+ここで、ファイル名が入っている行は、実際にくっつけたいファイルに合わせて増減させる。
+この呪文全体をコピーして、Terminal にペーストする。最後にリターンが必要かも。
+少し時間がかかるが、うまくいくと、作業しているフォルダーの中にどんどん新しいファイルができる。
+全部おわったところで、merge.m4a というファイルができているはずで、これが最終的に欲しいもの。適当に名前を付け替えて使う。
+1時間のトークで 10 MB くらいのかなり小さなファイルができるはず。
+（なお、ここで aac がつくファイルが作られるが、それらは全て消去してよい。呪文の最後に <code>rm *.aac</code> とやれば消えるのだが、事故が起きると怖いので、それは書いていない。）
 
 
 <h2>
-<a name="Terminal">�㋉�̕t�^�FMac �ł� Terminal ���g��������</a>
+<a name="Terminal">上級の付録：Mac での Terminal を使った操作</a>
 </h2>
-Mac �� Terminal ���g���ƁA���͂� UNIX �n�̃R�}���h�i���Ǝv���j�𗘗p�ł���B
-�ڂ��͂قƂ�ǒm��Ȃ��̂����A�Ƃ肠�����A<code>cd</code> �� <code>ls</code> �����͎g����B
-��������ƁA�l�ɋ�������u���@�v�������ł��g����悤�ɂȂ�B
+Mac の Terminal を使うと、強力な UNIX 系のコマンド（だと思う）を利用できる。
+ぼくはほとんど知らないのだが、とりあえず、<code>cd</code> と <code>ls</code> だけは使える。
+そうすると、人に教わった「魔法」を自分でも使えるようになる。
 <p>
-�ȉ��A���񋳂�������������̂܂܏����Ă����B
+以下、今回教わった呪文をそのまま書いておく。
 <h3>
-�T�C�Y��������������@
+サイズを小さくする方法
 </h3>
-Terminal ����
+Terminal から
 <p>
 <code>
 afconvert Tasaki20200327_Part2.m4a -f m4af -d aacp -b 24000
 </code>
 <p>
-�Ƃ���Ώ\���̈ꂭ�炢�ɂȂ�B����ł��A�u�`�Ȃ�Ώ\���ɕ����鉹�����B
+とすれば十分の一くらいになる。それでも、講義ならば十分に聞ける音質だ。
 <p>
-�⑫�i�����Ă���������Ɓj�F�I�v�V�����͂��ꂼ��
+補足（教えてもらったこと）：オプションはそれぞれ
 <pre>
--f �t�H�[�}�b�g�� ��MPEG4
--d ���k�f�[�^�`���w�� �ō����k�Ɍ����Ă���HE-AACv2
--b �r�b�g���[�g ��24kbps
+-f フォーマット名 でMPEG4
+-d 圧縮データ形式指定 で高圧縮に向いているHE-AACv2
+-b ビットレート で24kbps
 </pre>
-�ƌ����Ӗ��ł��D�ʖ��ɂ���ɂ� -o�I�v�V������ǉ����� -o �V�K�t�@�C����.m4a �Ȃǂ��܂��D
+と言う意味です．別名にするには -oオプションを追加して -o 新規ファイル名.m4a などします．
 
 <h3>
-������ m4a �t�@�C�����������A����Ɉ��k��������
+複数の m4a ファイルを結合し、さらに圧縮もかける
 </h3>
-�܂��A�������ׂ��t�@�C�������ɁA�������������Ԃɔԍ������Ă����B
-001.m4a, 002.m4a, 003.m4a �݂����ɁB
-�������U�A�X�g���[���`�� (aac) �Ƃ����̂ɕϊ����Ă���A�������������āA�Ō�Ɉ��k���� m4a �ɂ��邽�߂̎������ȉ��B
+まず、結合すべきファイルたちに、結合したい順番に番号をつけておく。
+001.m4a, 002.m4a, 003.m4a みたいに。
+これを一旦、ストリーム形式 (aac) というのに変換してから、それらをくっつけて、最後に圧縮した m4a にするための呪文が以下。
 <pre>
 foreach a (*m4a)
 afconvert $a -f adts -d 'aac '
@@ -335,9 +335,9 @@ end
 cat *aac > merge.aac
 afconvert merge.aac -f m4af -d aacp -b 24000
 </pre>
-�����A������ڂ��� Terminal �ł������A�ŏ��̂Ƃ��낪���܂������Ȃ������B
+ただ、これをぼくの Terminal でやったら、最初のところがうまく動かなかった。
 <p>
-�����ŁA�߂�����o�J���ۂ����ǁA�ǂ����t�@�C���̌��͑債�đ����Ȃ����낤�Ƃ����̂ŁA
+そこで、めっちゃバカっぽいけど、どうせファイルの個数は大して多くないだろうというので、
 <pre>
 afconvert 001.m4a -f adts -d 'aac '
 afconvert 002.m4a -f adts -d 'aac '
@@ -347,31 +347,31 @@ afconvert 005.m4a -f adts -d 'aac '
 cat *aac > merge.aac
 afconvert merge.aac -f m4af -d aacp -b 24000
 </pre>
-�݂����Ɍʂŕϊ�������������s���Ă݂��炤�܂��ł����I
-����ŁA�����̃t�@�C���ɕ����Ę^�����Ă����āA�ꔭ�ł������Ĉ��k���ł���I
+みたいに個別で変換する呪文を実行してみたらうまくできた！
+これで、複数のファイルに分けて録音しておいて、一発でくっつけて圧縮もできる！
 
 <h3>
-�t�L
+付記
 </h3>
-����ɁA�F�X�Ƌ�������B���ɂ͂킩�炸���s�ł��Ȃ��̂����A���̐l�̖��ɂ͗���������Ȃ��̂ŁA���̂܂܋L�ڂ��Ă����B
+さらに、色々と教わった。私にはわからず実行できないのだが、他の人の役には立つかもしれないので、そのまま記載しておく。
 <p>
-ffmpeg���C���X�g�[�����Ă���ꍇ�͌�����24kbps HE-AACv2�ւ̕ϊ�����x�ɏo���܂��B��(m4a�t�@�C����/Users/uota/�ɒu����Ă�ꍇ)
-ffmpeg -f concat -safe 0 -i <(printf "file '%s'\n" /Users/uota/*m4a) -c:a libfdk_aac -profile:a aac_he_v2 -b:a 24k ����.m4a
+ffmpegをインストールしている場合は結合と24kbps HE-AACv2への変換が一度に出来ます。例(m4aファイルが/Users/uota/に置かれてる場合)
+ffmpeg -f concat -safe 0 -i <(printf "file '%s'\n" /Users/uota/*m4a) -c:a libfdk_aac -profile:a aac_he_v2 -b:a 24k 結合.m4a
 <p>
-�u�`�Ȃǒ���ꍇ�A�����������̂Ńr�b�g���[�g���ςɂ��������ш�������������Ƃ��t�@�C���T�C�Y���������Ȃ�܂��B����ɂ�-b:a 24k�̕�����-vbr 1�ȂǂƂ��܂�(1���Œ�, 5���ō�����)
+講義など喋る場合、無音が多いのでビットレートを可変にした方が帯域を小さくせずともファイルサイズが小さくなります。それには-b:a 24kの部分を-vbr 1などとします(1が最低, 5が最高音質)
 
 
 
 
 <p align="right">
-<a href="index.html">���̃y�[�W��</a>
+<a href="index.html">元のページへ</a>
 </p>
 
 
 <!--    My standard signature   -->
 <hr>
 <address>
-<a href="../../indexJ.html">�c�萰���z�[���y�[�W</a>
+<a href="../../indexJ.html">田崎晴明ホームページ</a>
 </address>
 </body>
 </html>
