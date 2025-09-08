@@ -1,0 +1,4 @@
+今後の計画
+index.html と indexJ.html にはリンクが書いてあるだけなで、新しいホームページが index_new.html と index_J.html として用意されている。これらは、たぶん、ほぼできている。
+よって、どこかで、現在の二つのインデックスを消し、index_new と indexJ_new をそれぞれ index, indexJ と名前を変える。
+また、その際には、学習院側からこちらに飛ぶようにあちらを書き換える。
