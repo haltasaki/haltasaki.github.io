@@ -1,0 +1,130 @@
+%\documentclass[21pt]{jsarticle}\usepackage{ifthen}\newboolean{enlarge}\setboolean{enlarge}{true}
+\documentclass[12pt]{jsarticle}\usepackage{ifthen}\newboolean{enlarge}\setboolean{enlarge}{false}
+%%%%%%
+\setlength{\fullwidth}{16.5truecm}\setlength{\textwidth}{16.5truecm}
+\setlength{\oddsidemargin}{0.0truecm}\setlength{\evensidemargin}{0.0truecm}
+\setlength{\textheight}{21.5truecm}\setlength{\topmargin}{0.0truecm}
+%%%%%%
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{hyperref}\usepackage{pxjahyper}%these two come together
+\hypersetup{hidelinks}
+\interfootnotelinepenalty=10000 % this is to keep a footnote in a single page
+%%%%%%
+\newcommand{\LS}[2]{\ifthenelse{\boolean{enlarge}}{#1}{#2}}
+\newcommand{\LO}[1]{\LS{#1}{\relax}}
+\newcommand{\SO}[1]{\LS{\relax}{#1}}
+\newcommand{\LNL}{\LO{\notag\\&}}
+%%%%%%
+\begin{document}
+\begin{flushright}
+\footnotesize
+2019年4月4日
+\end{flushright}
+\noindent
+{\bf
+\Large 同じ\LaTeX\ ソースから拡大文書と通常の大きさの文書を作る簡便な方法}
+\begin{flushright}
+田崎晴明\footnote{%
+学習院大学理学部 \href{mailto:hal.tasaki@gakushuin.ac.jp}{\nolinkurl{hal.tasaki@gakushuin.ac.jp}}
+}
+\end{flushright}
+これは\LS{拡大版}{通常版}です。
+
+\paragraph{この文章の目的}
+同じ内容の文書を異なった文字のサイズで提供できると便利なことがある。
+ここでは奥村晴彦さん作の{\tt jsarticle}というドキュメントクラスを用い\SO{拡大版では}{\tt 21pt}を指定し\LS{ている}{た}\footnote{%
+どの程度の文字の大きさが最適かは状況によるだろう
+{\tt jsarticle}では{\tt 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 21pt, 25pt, 30pt, 36pt, 43pt}が指定できる。
+}。
+
+この際、文字サイズが変わっても共通のソースファイルを用いるべきである\footnote{%
+拡大版と通常版と二つのファイルを作ると、後からミスに気づいたとき二つを同時に修正しなくてはならない。
+ここからさらにミスが生じうる。
+}。
+\LaTeX\ を使っていれば難しいことではないが、特に数式や図の扱いについて考えるべきことがあったので、ここに私が採用した方法をまとめておく（もちろん、このファイル自身がその方法を用いた例になっている）。
+この文章は\LaTeX\ についての最低限の（実践的な）知識のある人がソースを参照しながら読むことを想定して書いている\footnote{%
+これをご覧になれば明らかだろうが、私の\LaTeX\ の知識は乏しい。
+}。
+
+この方法を考えるにあたり{\tt jsarticle}の仕様など様々なことを丁寧に教えてくださった奥村晴彦さんに感謝します。
+
+\paragraph{切り替えの基本}
+拡大版、通常版いずれのモードを使うかは、ファイルの冒頭の二行のうち一方をコメントアウトする（先頭に\verb!%!をつける）ことで切り替える（技術がないので野蛮なやり方だ）。
+この際、文字サイズが変わるとともに{\tt enlarge}という名前のブーリアン変数の値が決まる。
+今、この変数の値は\LS{{\tt true}}{{\tt false}}である。
+
+これによって文中でモードに応じて違う処理ができる。
+例えば、冒頭の文のソースは、
+\begin{verbatim}
+　　これは\LS{拡大版}{通常版}です。
+\end{verbatim}
+である。
+二つの引数を取るマクロ\verb!\LS! (Large or Standard)を使っている。
+他にも\verb!\LO! (Large Only), \verb!\SO! (Standard Only)を定義している。
+
+\paragraph{数式の改行の処理}
+拡大版では数式に余分な改行を入れなくてはならないのだが、以下のようにするとかなり楽にできる。
+なお、ここでは{\tt amsmath}を用いている。
+
+大事なコツは、普通は一行で書けてしまうような式でも必ず{\tt align}環境で書くことだ。
+そして、適切なところ（大抵は一つ目の$=$のところ）に数式を揃えるための\verb!&!を書き込んでおく。
+幸いなことに、このままコンパイルしても全く怒られない。
+そして拡大版のみで改行してほしい位置に\verb!\LNL!というマクロを挿入しておく。
+\begin{align}
+X&=A+B+C+D+E+F+G
+\LNL=a\times b\times c\times d\times e\times f\times g
+\end{align}
+通常版では一行のまま、拡大版では改行される。
+これが基本のやり方。
+
+マクロを工夫すれば、もっと色々とできる。
+例えば、もともと改行が必要な数式の場合、
+\begin{align}
+A+\LO{&}B+C+D+E+F+G\SO{&}=x+y
+\notag\\&=a\times b\times c\times d\times e\times f\times g
+\end{align}
+のように揃える位置をずらしたり、
+\begin{align}
+\LO{&}A+B+C+D+E+F+G\LO{\notag\\}&=x+y
+\notag\\&=a\times b\times c\times d\times e\times f\times g
+\end{align}
+のように改行を増やしたりできる\SO{（通常版では違いは見えないわけだが）}。
+
+\paragraph{図の扱い}
+図の扱いは悩ましいがサイズについては以下の二つの方法で対応できる。
+
+{\tt jsarticle}で{\tt width=2cm}のように長さを指定すると、真の2~cmではなく{\tt 10pt}を基準に拡大縮小された長さでタイプセットされる。
+この仕様を利用すれば、図~\ref{f:1}のように手間をかけずにモードによって図のサイズが変えられる。
+
+
+\begin{figure}
+\centerline{\includegraphics[width=2cm,clip]{MPSDblock.pdf}}
+\caption[dummy]{
+図の横幅を{\tt 2cm}と指定している。
+{\tt jsarticle}の仕様のため、{\tt 12pt}では$2\times(12/10)~\rm cm=2.4\ cm$で、{\tt 21pt}では$2\times(21/10)~\rm cm=4.2\ cm$で表示される。
+}
+\label{f:1}
+\end{figure}
+
+とは言っても、元の図のサイズが大きい場合はこの手は使えない。
+その際には図~\ref{f:2}のように\verb!\LS!を使って手動でサイズを切り替えている。
+なお、この際にはポイントが変わっても変化しない{\tt truecm}などの単位を用いる方がいいと思う。
+
+\begin{figure}
+\LS{%large
+\centerline{\includegraphics[width=16.5truecm,clip]{VBS2E2.pdf}}
+}{%standard
+\centerline{\includegraphics[width=14truecm,clip]{VBS2E2.pdf}}
+}
+\caption[dummy]{
+手動でサイズを切り替えた例。
+拡大版では{\tt 16.5truecm}、通常版では{\tt 14truecm}とした。
+}
+\label{f:2}
+\end{figure}
+
+
+\end{document}
+
+
