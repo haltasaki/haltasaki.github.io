@@ -28,9 +28,9 @@
 <!-- *********** main *********** -->
 
 <p>
-統計物理学にかかわる少し進んだ大学院レベルの話題についての、互いにほぼ独立したミニコース集です。学習院大学大学院での講義にもとづいています。
+統計物理学にかかわる少し進んだ大学院レベルの話題についての、互いにほぼ独立したミニコース集です。主として学習院大学大学院での講義にもとづいています。
 <br>
-今は古典系についての二つのミニコースと量子系についての一つのミニコースがあります。これから増やせればうれしいです。
+今は古典系についての二つのミニコースと量子系についての三つのミニコースがあります。さらに増やせればうれしいです。
 英語の手書きスライドを使って日本語で講義しました(同じ内容の英語版ミニコースもあります)。スライドはすべて以下からダウンロードできます。
 
 <br>
@@ -40,12 +40,13 @@
 <div class="topic">
 <a href="#Ising">2次元イジング模型における相転移の存在証明</a>（2025年）
 <br>
-
 <a href="#2DXY">2 次元 XY 模型には強磁性秩序がないこと</a>（2025年）
 <br>
-
+<a href="#LROSSB">量子スピン系と格子ハードコア・ボソン系における長距離秩序と対称性の自発的破れ</a>（2026年）
+<br>
 <a href="#XYchain">可積分のそして非可積分の量子スピン鎖</a>（2025年）
-
+<br>
+<a href="#ferro">強磁性の起源と Hubbard 模型</a>（2026年）
 </div>
 
 <hr width="80%">
@@ -196,6 +197,60 @@ Graduate Texts in Physics (Springer, 2020).
 </ul>
 
 
+<hr width="80%">
+
+<h2><a name="LROSSB"></a>
+量子スピン系と格子ハードコア・ボソン系における長距離秩序と対称性の自発的破れ / Long-range order and spontaneous symmetry breaking in quantum spin systems and hard core bosons on a lattice</h2>
+
+<div class="inyou">
+多体系における秩序（トポロジカル相などではなく、20世紀から伝統的に研究されてきた秩序）を特徴づけるために、長距離秩序 (LRO = long-range order) と対称性の自発的破れ (SSB = spontaneous symmetry breaking)という二つの概念がある。
+LRO と SSB はもちろん深く関わっているが、両者の関係は単純ではない。
+特に、ハミルトニアンと秩序演算子が非可換なモデルでは、（ハミルトニアンの最小の固有値に対応する固有状態という通常の意味での）基底状態は LRO を示すが SSB を起こさないのが一般的である。
+このような状況では低エネルギー状態 (low-lying states) の重ね合わせを用いて、完全な SSB を示す「マクロな基底状態」を構成できる。
+<br>
+この講義では、このストーリーがもっとも明快に見える横磁場イジング模型の例から出発し、連続な U(1) 対称性をもつ XY 模型とハードコア・ボソン系を舞台に、LRO と SSB そして低エネルギーの固有状態についての Koma-Tasaki の理論を紹介する。
+「LRO を示すが SSB を起こさない基底状態は物理的に実現されるのか？」という問いについては、スピン系とボソン系では答えが異なることを見ていきたい。
+<br>
+実は、このテーマを理解することで、超伝導の BCS 理論や BEC の Bogoliubov 理論を学んだ人が抱く定番の疑問：<br>
+　(1) なぜ、超伝導や BEC 状態を異なった粒子数の状態の重ね合わせで表すのか？<br>
+　(2) 粒子数が一定なら超伝導や BEC は生じないのか？<br>
+　(3) 超伝導や BEC が生じると粒子数がゆらぐのか？ 
+<br>への明快な答えが得られるのだ。
+<small>（先走った注：せっかちな人のために答えを書いておくと、(1) 理論的に便利（「自然」と言ってもいいかも）だからで、必然ではない。粒子数一定の状態でも超伝導や BEC を表現できる、(2) 普通に生じる、(3) 少なくとも単一の孤立系なら粒子数は保たれるので揺らいだりしない；複数の系が接触する場合は話は別。）</small>
+<p>
+Part 1 では、ごく大雑把な目標を述べたあと、この講義で一貫して用いる記号を定義する。
+Part 2 ではウォームアップとして、古典イジング模型の低温での平衡状態について LRO と SSB の関わりを議論する。
+Part 3 からが本題である。まず、ストーリーがほぼ自明な横磁場イジング模型の基底状態と第一励起状態についてみた後、それを一般化する Horsch, von der Linden の理論を紹介する。
+Part 4 では、U(1) 対称性を持つ XY 模型を扱う。2次元以上では基底状態は LRO を示すという Kennedy, Lieb, Shastry および Kubo, Kishi の結果を土台に、Koma, Tasaki による、低エネルギーの固有状態（Anderson's tower）や完全な SSB を起こす状態についての厳密な結果を（証明抜きで）概観する。
+Part 5 では、一転して、格子上のハードコア・ボソン系を扱う。実は、このモデルは数学的には Part 4 で扱った XY 模型と完全に等価である。ただ、物理的な状態空間（ヒルベルト空間）が異なるため「LRO を示すが SSB を起こさない基底状態」の持つ意味が変わるのだ。
+</div>
+
+
+
+<h3>Lectures</h3>
+<a href="https://youtube.com/playlist?list=PLI-fThlNwy-I&si=OLtbLy_-yqgP0VXU" target="_blank" rel="noopener">Playlist in YouTube</a>
+<ul>
+<li>Part 1: introduction and notations/ 
+<a href="https://youtu.be/q3B0BM6OtZw" target="_blank" rel="noopener">video (17.5 mins)</a>, <a href="../pdf/ATSP_LROSSB_1.pdf" download>slides (pdf 2.5 MB)</a>
+<li>Part 2: LRO and SSB in the equilibrium states of the classical Ising model / 
+<a href="https://youtu.be/20Ru2qL6nkA" target="_blank" rel="noopener">video (18 mins)</a>, <a href="../pdf/ATSP_LROSSB_2.pdf" download>slides (pdf 1.4 MB)</a>
+<li>Part 3: LRO and SSB in the ground states of quantum spin systems with discrete
+symmetry  / <a href="https://youtu.be/yawbfBI-Ahg" target="_blank" rel="noopener">video (50 mins)</a>, <a href="../pdf/ATSP_LROSSB_3.pdf" download>slides (pdf 3.9 MB)</a>
+<li>Part 4: LRO and SSB in the ground states of the quantum XY model / 
+<a href="https://youtu.be/Z-ttY8iUOvU" target="_blank" rel="noopener">video (53 mins)</a>, <a href="../pdf/ATSP_LROSSB_4.pdf" download>slides (pdf 8.3 MB)</a>
+<li>Part 5: ODLRO and SSB in the ground states of hard core bosons on a lattice / 
+<a href="https://youtu.be/nz3ZYdng-qE" target="_blank" rel="noopener">video (56 mins)</a>, <a href="../pdf/ATSP_LROSSB_5.pdf" download>slides (pdf 4.3 MB)</a> 
+</ul>
+
+<h3>References</h3>
+<ul>
+<Li>
+Tohru Koma and Hal Tasaki, "Symmetry Breaking and Finite Size Effects in Quantum Many-Body Systems", Journal of Statistical Physics 76, 745-803 (1994). (<a href="https://arxiv.org/abs/cond-mat/9708132">ArXiv version</a>)
+<Li>
+Hal Tasaki, "Long-range order, "tower" of states, and symmetry breaking in lattice quantum systems", Journal of Statistical Physics 174, 735-761 (2019). (<a href="https://arxiv.org/abs/1807.05847">ArXiv version</a>)
+</ul>
+
+
 
 <hr width="80%">
 
@@ -268,6 +323,67 @@ H. Tasaki,
 <a href="https://arxiv.org/abs/cond-mat/9712219" target="_blank" rel="noopener">From Nagaoka's ferromagnetism to flat-band ferromagnetism and beyond: An introduction to ferromagnetism in the Hubbard model</a> (Review on the Hubbard model)
 </ul>
 
+
+<hr width="80%">
+
+<h2><a name="ferro"></a>強磁性の起源と Hubbard 模型 / The origin of ferromagnetism
+and the Hubbard model</h2>
+
+<div class="inyou">
+強磁性体では、物質中の無数のスピンが相互作用した結果、全体としてスピンが向きを揃える磁気的な秩序が生じている。
+磁気秩序を生み出すスピン間の相互作用の起源を理解することは、物性物理学における歴史的な難問である。
+1928 年に Heisenberg は、電子がフェルミオンであること、そして電子が互いにクーロン相互作用し合うことから磁気的な相互作用が生まれるという「交換相互作用」の描像を提唱した。
+量子論にもとづく現代的な磁性の理論の出発点である。
+<br>
+Hubbard 模型は固体中で強く相互作用しあう電子系を記述する標準的な（ただしかなり理想化された）モデルである。
+電子を強束縛系として記述し、短距離でのクーロン相互作用を取り入れる。
+Hubbard 模型は 1960 年代初頭に主として強磁性の起源を理解するために研究されたが、その後、反強磁性、フェリ磁性、モット絶縁体、さらには超伝導などの諸現象を記述しうることが明らかになってきた。
+このミニ講義では、ある意味で原点に立ち返り、Hubbard 模型における強磁性の発現についての厳密な結果を少し詳しく見ていきたい。
+<br>
+Part 1 で簡単に背景と歴史を議論したあと、Part 2 で二電子系を舞台に交換相互作用について詳しくみる。ただし、この段階では波動関数にもとづく通常の量子力学だけを用い、Hubbard 模型には踏み込まない。
+Part 3 で、Hubbard 模型を一般的に定義し、基本的な結果や簡単な例題をみる。
+講義ではそれほど強調していないが、生成消滅演算子を使っていても（波動関数を使う）通常の多粒子系の量子力学とまったく等価であることを注意しておく<small>（参考文献の「非相対論的量子力学における生成・消滅演算子の方法(いわゆる「第二量子化」)の手引き 」を参照）</small>。
+Part 4 では、Hubbard 模型における強磁性の初めての厳密な例である長岡の強磁性を解説する。
+Part 5 では、平坦バンド強磁性を呼ばれる一連の結果のうち、Lieb のフェリ磁性と Mielke の平坦バンド強磁性を概観したあと、Tasaki（って、ぼくですが）の平坦バンド強磁性について証明を含めて少し詳しく解説する。
+<br>
+数学的な付録を二つ用意した。
+Appendix 1 では、実対称行列における Perron-Frobenius の定理を紹介し証明する。
+Appendix 2 では、一般次元のシュレディンガー方程式において（Perron-Frobenius の定理に対応する）基底状態の一意性と正値性を証明する。
+</div>
+
+
+<h3>Lectures</h3>
+<a href="https://youtube.com/playlist?list=PLGoOsDnKbxSE&si=CXvqac_W9RzPxbLZ" target="_blank" rel="noopener">Playlist in YouTube</a>
+<ul>
+<li>Part 1: introduction / 
+<a href="https://youtu.be/FN-JYP9XiVo" target="_blank" rel="noopener">video (12 mins)</a>, <a href="../pdf/ATSP_ferro_1.pdf" download>slides (pdf 3 MB)</a>
+<li>Part 2: exchange interaction in two-electron systems / 
+<a href="https://youtu.be/E8IlEprU0ko" target="_blank" rel="noopener">video (49 mins)</a>, <a href="../pdf/ATSP_ferro_2.pdf" download>slides (pdf 5.6 MB)</a>
+<li>Part 3: Hubbard model -- introduction and some
+elementary results  / 
+<a href="https://youtu.be/CbyqRx1sxAE" target="_blank" rel="noopener">video (53 mins)</a>, <a href="../pdf/ATSP_ferro_3.pdf" download>slides (pdf 3.9 MB)</a>
+<li>Part 4: Nagaoka ferromagnetism / 
+<a href="https://youtu.be/i1sp8mc9_OM" target="_blank" rel="noopener">video (35 mins)</a>, <a href="../pdf/ATSP_ferro_4.pdf" download>slides (pdf 2.7 MB)</a>
+<li>Part 5: flat-band ferromagnetism / 
+<a href="https://youtu.be/UurA-F3-bhs" target="_blank" rel="noopener">video (75 mins)</a>, <a href="../pdf/ATSP_ferro_5.pdf" download>slides (pdf 10.7 MB)</a> 
+<li>Appendix 1: Perron-Frobenius theorem for real
+symmetric matrices / 
+<a href="https://youtu.be/SmPFpy9W1vQ" target="_blank" rel="noopener">video (17 mins)</a>, <a href="../pdf/ATSP_ferro_A1.pdf" download>slides (pdf 1.8 MB)</a>
+<li>Appendix 2: positivity and uniqueness of the ground
+state of a Schrodinger equation / 
+<a href="https://youtu.be/xYmtACJCoxI" target="_blank" rel="noopener">video (33 mins)</a>, <a href="../pdf/ATSP_ferro_A2.pdf" download>slides (pdf 3.4 MB)</a>
+</ul>
+
+<h3>Related references</h3>
+<ul>
+<li>
+G. Teschl, <a href="https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe2.pdf" download>"Mathematical Methods in Quantum Mechanics: With Applications to Schrodinger Operators (2nd edition)"
+</a>
+<li>田崎晴明<a href="https://www.gakushuin.ac.jp/~881791/qmbj/files/2ndQNoteJ.pdf" download>「非相対論的量子力学における生成・消滅演算子の方法(いわゆる「第二量子化」)の手引き 」</a>
+<br>
+H. Tasaki, 
+<a href="https://arxiv.org/abs/1812.10732" target="_blank" rel="noopener">Introduction to the "second quantization" formalism for non-relativistic quantum mechanics: A possible substitution for Sections 6.7 and 6.8 of Feynman's "Statistical Mechanics"</a> (Note on the "second quantization" formalism)
+</ul>
 						
 				
 				</body>
